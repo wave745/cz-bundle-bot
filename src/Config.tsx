@@ -110,7 +110,7 @@ const Config: React.FC<ConfigProps> = ({
         }
         
         .glitch-text:hover {
-          text-shadow: 0 0 2px #02b36d, 0 0 4px #02b36d;
+          text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700;
           animation: glitch 2s infinite;
         }
         
@@ -145,7 +145,7 @@ const Config: React.FC<ConfigProps> = ({
       }}
     >
       <div 
-        className="relative bg-[#050a0e] border border-[#02b36d40] rounded-lg shadow-lg w-full max-w-md overflow-hidden transform config-cyberpunk-content config-glow"
+        className="relative bg-[#050a0e] border border-[#FFD70040] rounded-lg shadow-lg w-full max-w-md overflow-hidden transform config-cyberpunk-content config-glow"
         style={{ zIndex: 10000 }} // Even higher z-index for the modal content
       >
         {/* Ambient grid background */}
@@ -160,18 +160,18 @@ const Config: React.FC<ConfigProps> = ({
         </div>
 
         {/* Header */}
-        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#02b36d40]">
+        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#FFD70040]">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#02b36d20] mr-3">
-              <Settings size={16} className="text-[#02b36d]" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#FFD70020] mr-3">
+              <Settings size={16} className="text-[#FFD700]" />
             </div>
-            <h2 className="text-lg font-semibold text-[#e4fbf2] font-mono">
-              <span className="text-[#02b36d]">/</span> SYSTEM CONFIG <span className="text-[#02b36d]">/</span>
+            <h2 className="text-lg font-semibold text-[#FFE4B5] font-mono">
+              <span className="text-[#FFD700]">/</span> SYSTEM CONFIG <span className="text-[#FFD700]">/</span>
             </h2>
           </div>
           <button 
             onClick={onClose}
-            className="text-[#7ddfbd] hover:text-[#02b36d] transition-colors p-1 hover:bg-[#02b36d20] rounded"
+            className="text-[#FFE4B5] hover:text-[#FFD700] transition-colors p-1 hover:bg-[#FFD70020] rounded"
           >
             <X size={18} />
           </button>
@@ -181,68 +181,68 @@ const Config: React.FC<ConfigProps> = ({
         <div className="relative z-10 p-5 space-y-5">
           <div className="group animate-[fadeIn_0.3s_ease]">
             <div className="flex items-center gap-1 mb-2">
-              <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                <span className="text-[#02b36d]">&#62;</span> RPC Endpoint URL <span className="text-[#02b36d]">&#60;</span>
+              <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                <span className="text-[#FFD700]">&#62;</span> RPC Endpoint URL <span className="text-[#FFD700]">&#60;</span>
               </label>
-              <Server size={14} className="text-[#7ddfbd]" />
+              <Server size={14} className="text-[#FFE4B5]" />
             </div>
             <div className="relative">
               <input
                 type="text"
                 value={config.rpcEndpoint}
                 onChange={(e) => onConfigChange('rpcEndpoint', e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#e4fbf2] shadow-inner focus:border-[#02b36d] focus:ring-1 focus:ring-[#02b36d50] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
+                className="w-full px-4 py-2.5 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] shadow-inner focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD70050] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
                 placeholder="ENTER RPC ENDPOINT URL"
               />
-              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#02b36d30] transition-all duration-300"></div>
+              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#FFD70030] transition-all duration-300"></div>
             </div>
           </div>
           
           {/* New API Key field */}
           <div className="group animate-[fadeIn_0.35s_ease]">
             <div className="flex items-center gap-1 mb-2">
-              <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                <span className="text-[#02b36d]">&#62;</span> API Key <span className="text-[#02b36d]">&#60;</span>
+              <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                <span className="text-[#FFD700]">&#62;</span> API Key <span className="text-[#FFD700]">&#60;</span>
               </label>
-              <Key size={14} className="text-[#7ddfbd]" />
+              <Key size={14} className="text-[#FFE4B5]" />
             </div>
             <div className="relative">
               <input
                 type="text"
                 value={config.apiKey}
                 onChange={(e) => onConfigChange('apiKey', e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#e4fbf2] shadow-inner focus:border-[#02b36d] focus:ring-1 focus:ring-[#02b36d50] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
+                className="w-full px-4 py-2.5 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] shadow-inner focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD70050] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
                 placeholder="ENTER API KEY"
               />
-              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#02b36d30] transition-all duration-300"></div>
+              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#FFD70030] transition-all duration-300"></div>
             </div>
           </div>
           
           <div className="group animate-[fadeIn_0.4s_ease]">
             <div className="flex items-center gap-1 mb-2">
-              <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                <span className="text-[#02b36d]">&#62;</span> Transaction Fee (SOL) <span className="text-[#02b36d]">&#60;</span>
+              <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                <span className="text-[#FFD700]">&#62;</span> Transaction Fee (SOL) <span className="text-[#FFD700]">&#60;</span>
               </label>
-              <CreditCard size={14} className="text-[#7ddfbd]" />
+              <CreditCard size={14} className="text-[#FFE4B5]" />
             </div>
             <div className="relative">
               <input
                 type="number"
                 value={config.transactionFee}
                 onChange={(e) => onConfigChange('transactionFee', e.target.value)}
-                className="w-full px-4 py-2.5 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#e4fbf2] shadow-inner focus:border-[#02b36d] focus:ring-1 focus:ring-[#02b36d50] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
+                className="w-full px-4 py-2.5 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] shadow-inner focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD70050] focus:outline-none transition-all duration-200 config-input-cyberpunk font-mono tracking-wider"
                 step="0.000001"
                 min="0"
                 placeholder="ENTER TRANSACTION FEE"
               />
-              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#02b36d30] transition-all duration-300"></div>
+              <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#FFD70030] transition-all duration-300"></div>
             </div>
           </div>
           
           <div className="pt-4 animate-[fadeIn_0.5s_ease]">
             <button
               onClick={onSave}
-              className="w-full px-5 py-3 bg-[#02b36d] text-[#050a0e] rounded-lg shadow-lg transition-all duration-300 font-mono tracking-wider font-medium transform hover:-translate-y-0.5 hover:bg-[#01a35f] config-btn-cyberpunk"
+              className="w-full px-5 py-3 bg-[#FFD700] text-[#050a0e] rounded-lg shadow-lg transition-all duration-300 font-mono tracking-wider font-medium transform hover:-translate-y-0.5 hover:bg-[#01a35f] config-btn-cyberpunk"
             >
               SAVE CONFIGURATION
             </button>
@@ -250,10 +250,10 @@ const Config: React.FC<ConfigProps> = ({
         </div>
         
         {/* Cyberpunk decorative corner elements */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
       </div>
     </div>,
     document.body

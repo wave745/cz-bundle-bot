@@ -41,19 +41,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(11, 82, 46, 0.5); /* yellow-500 with opacity */
+  background-color: rgba(255, 215, 0, 0.5); /* gold with opacity */
   border-radius: 8px;
   transition: background-color 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(11, 82, 46, 0.5)
+  background-color: rgba(255, 215, 0, 0.7)
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(11, 82, 46, 0.5) transparent;
+  scrollbar-color: rgba(255, 215, 0, 0.5) transparent;
 }
 
 /* For Edge legacy */
@@ -74,12 +74,12 @@
   }
   
   *::-ms-scrollbar-thumb {
-    background-color: rgba(11, 82, 46, 0.5);
+    background-color: rgba(255, 215, 0, 0.5);
     border-radius: 8px;
   }
   
   *::-ms-scrollbar-thumb:hover {
-    background-color: rgba(11, 82, 46, 0.5);
+    background-color: rgba(255, 215, 0, 0.7);
   }
 }
 iframe::-webkit-scrollbar {

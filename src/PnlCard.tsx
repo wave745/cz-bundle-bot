@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Download } from 'lucide-react';
-import logoImage from './logo.png';
+import CaesarBotLogo from './Logo';
 
 // Define proper types
 interface PnlDataItem {
@@ -172,29 +172,14 @@ const PnlCard: React.FC<PnlCardProps> = ({
           {/* Header Section */}
           <div className="flex items-center mb-8">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={logoImage} 
-                    alt="Raze Logo" 
-                    className="w-12 h-12 object-contain"
-                    onError={(e) => {
-                      // Fallback to lightning icon if logo fails to load
-                      e.currentTarget.style.display = 'none';
-                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (nextElement) {
-                        nextElement.style.display = 'block';
-                      }
-                    }}
-                  />
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'none'}}>
-                    <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="white" strokeWidth="0"/>
-                  </svg>
-                </div>
+              <div className="flex-shrink-0">
+                <CaesarBotLogo size="large" />
+              </div>
                <div>
-                 <h2 className="text-white font-bold text-2xl tracking-tight">Raze.BOT</h2>
+                 <h2 className="text-white font-bold text-2xl tracking-tight">CAESAR BOT</h2>
                  <p className={`text-sm font-medium ${
-                   isNegative ? 'text-red-400' : 'text-green-400'
-                 }`}>https://app.raze.bot</p>
+                   isNegative ? 'text-red-400' : 'text-yellow-400'
+                 }`}>https://caesarbot.com</p>
                </div>
             </div>
           </div>
@@ -203,7 +188,7 @@ const PnlCard: React.FC<PnlCardProps> = ({
           <div className="text-center mb-8">
             <div className="text-gray-400 text-sm font-medium mb-2">Total P&L</div>
             <div className={`text-4xl font-bold mb-1 ${
-              summary.totalProfit >= 0 ? 'text-green-400' : 'text-red-400'
+              summary.totalProfit >= 0 ? 'text-yellow-400' : 'text-red-400'
             }`}>
               {formatAmount(summary.totalProfit)} SOL
             </div>
@@ -221,7 +206,7 @@ const PnlCard: React.FC<PnlCardProps> = ({
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
               <div className="text-gray-400 text-xs font-medium mb-1">Win Rate</div>
               <div className={`text-xl font-bold ${
-                isNegative ? 'text-red-400' : 'text-green-400'
+                isNegative ? 'text-red-400' : 'text-yellow-400'
               }`}>
                 {summary.totalWallets > 0 ? Math.round((summary.profitableWallets / summary.totalWallets) * 100) : 0}%
               </div>
@@ -230,7 +215,7 @@ const PnlCard: React.FC<PnlCardProps> = ({
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                 <div className="text-gray-400 text-xs font-medium mb-1">Best Trade</div>
                 <div className={`text-lg font-bold ${
-                  summary.bestProfit >= 0 ? 'text-green-400' : 'text-red-400'
+                  summary.bestProfit >= 0 ? 'text-yellow-400' : 'text-red-400'
                 }`}>
                   {formatAmount(summary.bestProfit)}
                 </div>
@@ -240,7 +225,7 @@ const PnlCard: React.FC<PnlCardProps> = ({
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                 <div className="text-gray-400 text-xs font-medium mb-1">Worst Trade</div>
                 <div className={`text-lg font-bold ${
-                  summary.worstProfit >= 0 ? 'text-green-400' : 'text-red-400'
+                  summary.worstProfit >= 0 ? 'text-yellow-400' : 'text-red-400'
                 }`}>
                   {formatAmount(summary.worstProfit)}
                 </div>
@@ -256,13 +241,13 @@ const PnlCard: React.FC<PnlCardProps> = ({
                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-gray-400">
                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                </svg>
-               <span className="text-gray-400 text-xs">@razedotbot</span>
+               <span className="text-gray-400 text-xs">@caesarbot</span>
              </div>
              <div className="flex items-center space-x-1">
                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-gray-400">
                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                </svg>
-               <span className="text-gray-400 text-xs">razedotbot</span>
+               <span className="text-gray-400 text-xs">caesarbot</span>
              </div>
            </div>
         </div>
@@ -275,7 +260,7 @@ const PnlCard: React.FC<PnlCardProps> = ({
         className={`mt-6 w-full group relative overflow-hidden rounded-2xl p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:hover:scale-100 ${
           isNegative 
             ? 'bg-gradient-to-r from-red-500 to-red-600 hover:shadow-red-500/25'
-            : 'bg-gradient-to-r from-green-500 to-green-600 hover:shadow-green-500/25'
+            : 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:shadow-yellow-500/25'
         }`}
       >
         <div className="relative rounded-2xl bg-gray-900/50 backdrop-blur-sm px-6 py-3 transition-all duration-300 group-hover:bg-gray-900/30">

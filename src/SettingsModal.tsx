@@ -266,12 +266,12 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-[#091217] border border-[#02b36d40] cyberpunk-border rounded-lg w-[90vw] max-w-4xl h-[85vh] p-6 mx-4 overflow-hidden flex flex-col">
+      <div className="bg-[#091217] border border-[#FFD70040] cyberpunk-border rounded-lg w-[90vw] max-w-4xl h-[85vh] p-6 mx-4 overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6 pb-4 border-b border-[#02b36d40]">
+        <div className="flex justify-between items-center mb-6 pb-4 border-b border-[#FFD70040]">
           <div className="flex items-center gap-3">
-            <Settings className="text-[#02b36d]" size={24} />
-            <h2 className="text-xl font-bold text-[#e4fbf2] font-mono tracking-wider">SYSTEM SETTINGS</h2>
+            <Settings className="text-[#FFD700]" size={24} />
+            <h2 className="text-xl font-bold text-[#FFE4B5] font-mono tracking-wider">SYSTEM SETTINGS</h2>
           </div>
           <button 
             onClick={onClose}
@@ -293,8 +293,8 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
               onClick={() => setActiveTab(id)}
               className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all duration-300 font-mono text-sm ${
                 activeTab === id
-                  ? 'bg-[#02b36d] text-black font-bold'
-                  : 'text-[#7ddfbd] hover:text-[#e4fbf2] hover:bg-[#02b36d20]'
+                  ? 'bg-[#FFD700] text-black font-bold'
+                  : 'text-[#FFE4B5] hover:text-[#FFE4B5] hover:bg-[#FFD70020]'
               }`}
             >
               <Icon size={16} />
@@ -307,35 +307,35 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
         <div className="flex-1 overflow-y-auto">
           {activeTab === 'network' && (
             <div className="space-y-6">
-              <div className="bg-[#0a1419] border border-[#02b36d30] rounded-lg p-6">
-                <h3 className="text-lg font-bold text-[#e4fbf2] font-mono mb-4 flex items-center gap-2">
-                  <Globe size={20} className="text-[#02b36d]" />
+              <div className="bg-[#0a1419] border border-[#FFD70030] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-[#FFE4B5] font-mono mb-4 flex items-center gap-2">
+                  <Globe size={20} className="text-[#FFD700]" />
                   NETWORK CONFIGURATION
                 </h3>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm text-[#7ddfbd] font-mono mb-2 uppercase tracking-wider">
+                    <label className="block text-sm text-[#FFE4B5] font-mono mb-2 uppercase tracking-wider">
                       RPC Endpoint
                     </label>
                     <input
                       type="text"
                       value={config.rpcEndpoint}
                       onChange={(e) => onConfigChange('rpcEndpoint', e.target.value)}
-                      className="w-full bg-[#091217] border border-[#02b36d40] rounded p-3 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono"
+                      className="w-full bg-[#091217] border border-[#FFD70040] rounded p-3 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono"
                       placeholder="Enter RPC endpoint URL"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm text-[#7ddfbd] font-mono mb-2 uppercase tracking-wider">
+                    <label className="block text-sm text-[#FFE4B5] font-mono mb-2 uppercase tracking-wider">
                       Transaction Fee (SOL)
                     </label>
                     <input
                       type="text"
                       value={config.transactionFee}
                       onChange={(e) => onConfigChange('transactionFee', e.target.value)}
-                      className="w-full bg-[#091217] border border-[#02b36d40] rounded p-3 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono"
+                      className="w-full bg-[#091217] border border-[#FFD70040] rounded p-3 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono"
                       placeholder="0.000005"
                     />
                   </div>
@@ -347,15 +347,15 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
           {activeTab === 'wallets' && (
             <div className="space-y-6">
               {/* Create Wallets Section */}
-              <div className="bg-[#0a1419] border border-[#02b36d30] rounded-lg p-6">
-                <h3 className="text-lg font-bold text-[#e4fbf2] font-mono mb-4 flex items-center gap-2">
-                  <Plus size={20} className="text-[#02b36d]" />
+              <div className="bg-[#0a1419] border border-[#FFD70030] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-[#FFE4B5] font-mono mb-4 flex items-center gap-2">
+                  <Plus size={20} className="text-[#FFD700]" />
                   CREATE WALLETS
                 </h3>
                 
                 <div className="flex gap-4 items-end">
                   <div className="flex-1">
-                    <label className="block text-sm text-[#7ddfbd] font-mono mb-2 uppercase tracking-wider">
+                    <label className="block text-sm text-[#FFE4B5] font-mono mb-2 uppercase tracking-wider">
                       Quantity (1-100)
                     </label>
                     <input
@@ -364,7 +364,7 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                       max="100"
                       value={walletQuantity}
                       onChange={(e) => setWalletQuantity(e.target.value)}
-                      className="w-full bg-[#091217] border border-[#02b36d40] rounded p-3 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono"
+                      className="w-full bg-[#091217] border border-[#FFD70040] rounded p-3 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono"
                       placeholder="1"
                     />
                   </div>
@@ -373,8 +373,8 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                     disabled={isCreatingWallets}
                     className={`px-6 py-3 ${
                       isCreatingWallets 
-                        ? 'bg-[#02b36d50] cursor-not-allowed' 
-                        : 'bg-[#02b36d] hover:bg-[#01a35f] cyberpunk-btn'
+                        ? 'bg-[#FFD70050] cursor-not-allowed' 
+                        : 'bg-[#FFD700] hover:bg-[#01a35f] cyberpunk-btn'
                     } text-black font-bold rounded font-mono tracking-wider transition-all duration-300`}
                   >
                     {isCreatingWallets ? 'CREATING...' : 'CREATE'}
@@ -383,17 +383,17 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
               </div>
 
               {/* Wallet Management Actions */}
-              <div className="bg-[#0a1419] border border-[#02b36d30] rounded-lg p-6">
-                <h3 className="text-lg font-bold text-[#e4fbf2] font-mono mb-4 flex items-center gap-2">
-                  <Settings size={20} className="text-[#02b36d]" />
+              <div className="bg-[#0a1419] border border-[#FFD70030] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-[#FFE4B5] font-mono mb-4 flex items-center gap-2">
+                  <Settings size={20} className="text-[#FFD700]" />
                   WALLET MANAGEMENT
                 </h3>
                 
                 <div className="space-y-6">
                   {/* Import Section */}
                   <div className="space-y-4">
-                    <h4 className="text-md font-bold text-[#e4fbf2] font-mono flex items-center gap-2">
-                      <Key size={16} className="text-[#02b36d]" />
+                    <h4 className="text-md font-bold text-[#FFE4B5] font-mono flex items-center gap-2">
+                      <Key size={16} className="text-[#FFD700]" />
                       IMPORT WALLETS
                     </h4>
                     
@@ -408,8 +408,8 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                           setImportError(null);
                         }}
                         className={`w-full bg-[#091217] border ${
-                          importError ? 'border-[#ff2244]' : 'border-[#02b36d40]'
-                        } rounded p-3 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono`}
+                          importError ? 'border-[#ff2244]' : 'border-[#FFD70040]'
+                        } rounded p-3 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono`}
                       />
                       {importError && (
                         <div className="text-[#ff2244] text-sm font-mono flex items-center">
@@ -421,8 +421,8 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                         disabled={!importKey.trim()}
                         className={`w-full p-3 ${
                           !importKey.trim()
-                            ? 'bg-[#02b36d20] cursor-not-allowed'
-                            : 'bg-[#02b36d] hover:bg-[#01a35f] cyberpunk-btn'
+                            ? 'bg-[#FFD70020] cursor-not-allowed'
+                            : 'bg-[#FFD700] hover:bg-[#01a35f] cyberpunk-btn'
                         } text-black font-bold rounded font-mono tracking-wider transition-all duration-300`}
                       >
                         IMPORT WALLET
@@ -444,9 +444,9 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                         disabled={isProcessingFile}
                         className={`w-full p-3 ${
                           isProcessingFile 
-                            ? 'bg-[#02b36d20] cursor-not-allowed' 
-                            : 'bg-[#091217] hover:bg-[#02b36d20] cyberpunk-btn'
-                        } border border-[#02b36d40] rounded font-mono text-sm transition-all duration-300 flex items-center justify-center gap-2`}
+                            ? 'bg-[#FFD70020] cursor-not-allowed' 
+                            : 'bg-[#091217] hover:bg-[#FFD70020] cyberpunk-btn'
+                        } border border-[#FFD70040] rounded font-mono text-sm transition-all duration-300 flex items-center justify-center gap-2`}
                       >
                         <FileUp size={16} />
                         {isProcessingFile ? 'PROCESSING FILE...' : 'IMPORT FROM FILE (.txt/.key)'}
@@ -455,12 +455,12 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
                   </div>
 
                   {/* Management Actions */}
-                  <div className="border-t border-[#02b36d20] pt-4">
-                    <h4 className="text-md font-bold text-[#e4fbf2] font-mono mb-4">ACTIONS</h4>
+                  <div className="border-t border-[#FFD70020] pt-4">
+                    <h4 className="text-md font-bold text-[#FFE4B5] font-mono mb-4">ACTIONS</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <button
                         onClick={() => downloadAllWallets(wallets)}
-                        className="p-3 bg-[#091217] border border-[#02b36d40] hover:border-[#02b36d] rounded font-mono text-sm transition-all duration-300 flex items-center justify-center gap-2"
+                        className="p-3 bg-[#091217] border border-[#FFD70040] hover:border-[#FFD700] rounded font-mono text-sm transition-all duration-300 flex items-center justify-center gap-2"
                       >
                         <Download size={16} />
                         EXPORT ALL WALLETS
@@ -479,30 +479,30 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
               </div>
 
               {/* Wallet Stats */}
-              <div className="bg-[#0a1419] border border-[#02b36d30] rounded-lg p-6">
-                <h3 className="text-lg font-bold text-[#e4fbf2] font-mono mb-4">WALLET STATISTICS</h3>
+              <div className="bg-[#0a1419] border border-[#FFD70030] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-[#FFE4B5] font-mono mb-4">WALLET STATISTICS</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#02b36d] font-mono">{wallets.length}</div>
-                    <div className="text-sm text-[#7ddfbd] font-mono">TOTAL WALLETS</div>
+                    <div className="text-2xl font-bold text-[#FFD700] font-mono">{wallets.length}</div>
+                    <div className="text-sm text-[#FFE4B5] font-mono">TOTAL WALLETS</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#02b36d] font-mono">
+                    <div className="text-2xl font-bold text-[#FFD700] font-mono">
                       {Array.from(solBalances.values()).reduce((sum, balance) => sum + balance, 0).toFixed(4)}
                     </div>
-                    <div className="text-sm text-[#7ddfbd] font-mono">TOTAL SOL</div>
+                    <div className="text-sm text-[#FFE4B5] font-mono">TOTAL SOL</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#02b36d] font-mono">
+                    <div className="text-2xl font-bold text-[#FFD700] font-mono">
                       {Array.from(tokenBalances.values()).reduce((sum, balance) => sum + balance, 0).toLocaleString()}
                     </div>
-                    <div className="text-sm text-[#7ddfbd] font-mono">TOTAL TOKENS</div>
+                    <div className="text-sm text-[#FFE4B5] font-mono">TOTAL TOKENS</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#02b36d] font-mono">
+                    <div className="text-2xl font-bold text-[#FFD700] font-mono">
                       {wallets.filter(w => (solBalances.get(w.address) || 0) > 0).length}
                     </div>
-                    <div className="text-sm text-[#7ddfbd] font-mono">ACTIVE WALLETS</div>
+                    <div className="text-sm text-[#FFE4B5] font-mono">ACTIVE WALLETS</div>
                   </div>
                 </div>
               </div>
@@ -511,38 +511,38 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
 
           {activeTab === 'advanced' && (
             <div className="space-y-6">
-              <div className="bg-[#0a1419] border border-[#02b36d30] rounded-lg p-6">
-                <h3 className="text-lg font-bold text-[#e4fbf2] font-mono mb-4 flex items-center gap-2">
-                  <Zap size={20} className="text-[#02b36d]" />
+              <div className="bg-[#0a1419] border border-[#FFD70030] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-[#FFE4B5] font-mono mb-4 flex items-center gap-2">
+                  <Zap size={20} className="text-[#FFD700]" />
                   ADVANCED SETTINGS
                 </h3>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm text-[#7ddfbd] font-mono mb-2 uppercase tracking-wider">
+                    <label className="block text-sm text-[#FFE4B5] font-mono mb-2 uppercase tracking-wider">
                       API Key (Optional)
                     </label>
                     <input
                       type="password"
                       value={config.apiKey}
                       onChange={(e) => onConfigChange('apiKey', e.target.value)}
-                      className="w-full bg-[#091217] border border-[#02b36d40] rounded p-3 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono"
+                      className="w-full bg-[#091217] border border-[#FFD70040] rounded p-3 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono"
                       placeholder="Enter API key for enhanced features"
                     />
                   </div>
                   
-                  <div className="bg-[#091217] border border-[#02b36d20] rounded p-4">
-                    <h4 className="text-sm font-bold text-[#e4fbf2] font-mono mb-2">SYSTEM INFORMATION</h4>
+                  <div className="bg-[#091217] border border-[#FFD70020] rounded p-4">
+                    <h4 className="text-sm font-bold text-[#FFE4B5] font-mono mb-2">SYSTEM INFORMATION</h4>
                     <div className="space-y-2 text-sm font-mono">
                       <div className="flex justify-between">
-                        <span className="text-[#7ddfbd]">Connection Status:</span>
-                        <span className={connection ? 'text-[#02b36d]' : 'text-[#ff2244]'}>
+                        <span className="text-[#FFE4B5]">Connection Status:</span>
+                        <span className={connection ? 'text-[#FFD700]' : 'text-[#ff2244]'}>
                           {connection ? 'CONNECTED' : 'DISCONNECTED'}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#7ddfbd]">RPC Endpoint:</span>
-                        <span className="text-[#e4fbf2] truncate ml-2" title={config.rpcEndpoint}>
+                        <span className="text-[#FFE4B5]">RPC Endpoint:</span>
+                        <span className="text-[#FFE4B5] truncate ml-2" title={config.rpcEndpoint}>
                           {config.rpcEndpoint.length > 30 ? config.rpcEndpoint.substring(0, 30) + '...' : config.rpcEndpoint}
                         </span>
                       </div>
@@ -555,16 +555,16 @@ const EnhancedSettingsModal: React.FC<EnhancedSettingsModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-[#02b36d40]">
+        <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-[#FFD70040]">
           <button
             onClick={onClose}
-            className="px-6 py-3 bg-[#091217] border border-[#02b36d40] hover:border-[#02b36d] rounded font-mono text-sm transition-all duration-300"
+            className="px-6 py-3 bg-[#091217] border border-[#FFD70040] hover:border-[#FFD700] rounded font-mono text-sm transition-all duration-300"
           >
             CANCEL
           </button>
           <button
             onClick={handleSaveAndClose}
-            className="px-6 py-3 bg-[#02b36d] hover:bg-[#01a35f] text-black font-bold rounded cyberpunk-btn font-mono tracking-wider transition-all duration-300 flex items-center gap-2"
+            className="px-6 py-3 bg-[#FFD700] hover:bg-[#01a35f] text-black font-bold rounded cyberpunk-btn font-mono tracking-wider transition-all duration-300 flex items-center gap-2"
           >
             <Save size={16} />
             SAVE SETTINGS

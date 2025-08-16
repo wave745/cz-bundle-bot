@@ -144,7 +144,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
   const formatProfit = (profit: number) => {
     return {
       text: profit > 0 ? `+${profit.toFixed(4)}` : profit.toFixed(4),
-      class: profit > 0 ? 'text-[#02b36d]' : profit < 0 ? 'text-red-400' : 'text-[#7ddfbd]'
+              class: profit > 0 ? 'text-[#FFD700]' : profit < 0 ? 'text-red-400' : 'text-[#FFE4B5]'
     };
   };
 
@@ -298,7 +298,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
     }
     
     .glitch-text:hover {
-      text-shadow: 0 0 2px #02b36d, 0 0 4px #02b36d;
+      text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700;
       animation: glitch 2s infinite;
     }
     
@@ -328,7 +328,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm modal-cyberpunk-container" style={{backgroundColor: 'rgba(5, 10, 14, 0.85)'}}>
-      <div className="relative bg-[#050a0e] border border-[#02b36d40] rounded-lg shadow-lg w-full max-w-2xl mx-4 overflow-hidden transform modal-cyberpunk-content modal-glow">
+      <div className="relative bg-[#050a0e] border border-[#FFD70040] rounded-lg shadow-lg w-full max-w-2xl mx-4 overflow-hidden transform modal-cyberpunk-content modal-glow">
         {/* Ambient grid background */}
         <div className="absolute inset-0 z-0 opacity-10"
              style={{
@@ -339,18 +339,18 @@ export const PnlModal: React.FC<PnlModalProps> = ({
         </div>
 
         {/* Header */}
-        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#02b36d40]">
+                <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#FFD70040]">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#02b36d20] mr-3">
-              <BarChart2 size={16} className="text-[#02b36d]" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#FFD70020] mr-3">
+              <BarChart2 size={16} className="text-[#FFD700]" />
             </div>
-            <h2 className="text-lg font-semibold text-[#e4fbf2] font-mono">
-              <span className="text-[#02b36d]">/</span> TOKEN PNL CALCULATOR <span className="text-[#02b36d]">/</span>
+            <h2 className="text-lg font-semibold text-[#FFE4B5] font-mono">
+              <span className="text-[#FFD700]">/</span> TOKEN PNL CALCULATOR <span className="text-[#FFD700]">/</span>
             </h2>
           </div>
-          <button 
+          <button
             onClick={onClose}
-            className="text-[#7ddfbd] hover:text-[#02b36d] transition-colors p-1 hover:bg-[#02b36d20] rounded"
+            className="text-[#FFE4B5] hover:text-[#FFD700] transition-colors p-1 hover:bg-[#FFD70020] rounded"
           >
             <X size={18} />
           </button>
@@ -359,35 +359,35 @@ export const PnlModal: React.FC<PnlModalProps> = ({
         {/* Progress Indicator */}
         <div className="relative w-full h-1 bg-[#091217] progress-bar-cyberpunk">
           <div 
-            className="h-full bg-[#02b36d] transition-all duration-300"
+            className="h-full bg-[#FFD700] transition-all duration-300"
             style={{ width: `${((currentStep + 1) / STEPS_PNL.length) * 100}%` }}
           ></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 p-5 space-y-5 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#02b36d40] scrollbar-track-[#091217]">
+                  <div className="relative z-10 p-5 space-y-5 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#FFD70040] scrollbar-track-[#091217]">
           <form onSubmit={(e) => e.preventDefault()}>
             {/* Step 1: Select Wallets */}
             {currentStep === 0 && (
               <div className="animate-[fadeIn_0.3s_ease]">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-[#02b36d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg className="w-5 h-5 text-[#FFD700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <rect x="2" y="5" width="20" height="14" rx="2" />
                       <path d="M16 10h2M6 14h12" />
                     </svg>
-                    <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                      <span className="text-[#02b36d]">&#62;</span> SELECT WALLETS <span className="text-[#02b36d]">&#60;</span>
+                    <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                      <span className="text-[#FFD700]">&#62;</span> SELECT WALLETS <span className="text-[#FFD700]">&#60;</span>
                     </h3>
                   </div>
                 </div>
 
                 {/* Token Information */}
-                <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30] mb-4">
+                <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030] mb-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#7ddfbd] font-mono">TOKEN ADDRESS:</span>
-                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#02b36d20]">
-                      <span className="text-sm font-mono text-[#e4fbf2] glitch-text">
+                    <span className="text-sm text-[#FFE4B5] font-mono">TOKEN ADDRESS:</span>
+                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#FFD70020]">
+                      <span className="text-sm font-mono text-[#FFE4B5] glitch-text">
                         {`${tokenAddress.slice(0, 6)}...${tokenAddress.slice(-4)}`}
                       </span>
                     </div>
@@ -397,18 +397,18 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 {/* Search and Filters */}
                 <div className="mb-2 flex space-x-2">
                   <div className="relative flex-grow">
-                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7ddfbd]" />
+                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FFE4B5]" />
                     <input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                       placeholder="SEARCH WALLETS..."
                     />
                   </div>
                   
                   <select 
-                    className="bg-[#091217] border border-[#02b36d30] rounded-lg px-2 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] modal-input-cyberpunk font-mono"
+                    className="bg-[#091217] border border-[#FFD70030] rounded-lg px-2 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] modal-input-cyberpunk font-mono"
                     value={sortOption}
                     onChange={(e) => setSortOption(e.target.value)}
                   >
@@ -417,7 +417,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                   
                   <button
                     type="button"
-                    className="p-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#7ddfbd] hover:text-[#02b36d] hover:border-[#02b36d] transition-all modal-btn-cyberpunk"
+                    className="p-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] hover:text-[#FFD700] hover:border-[#FFD700] transition-all modal-btn-cyberpunk"
                     onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
                   >
                     {sortDirection === 'asc' ? '↑' : '↓'}
@@ -425,31 +425,31 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 </div>
 
                 {/* Wallet Selection */}
-                <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#02b36d20] shadow-inner transition-all duration-200 hover:border-[#02b36d40]">
-                  <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-[#02b36d40] scrollbar-track-[#091217]">
+                <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#FFD70020] shadow-inner transition-all duration-200 hover:border-[#FFD70040]">
+                  <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-[#FFD70040] scrollbar-track-[#091217]">
                     {filterWallets(wallets, searchTerm).length > 0 ? (
                       filterWallets(wallets, searchTerm).map((wallet) => (
                         <div 
                           key={wallet.id}
-                          className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#02b36d20] last:border-b-0
-                                    ${selectedWallets.includes(wallet.privateKey) ? 'bg-[#02b36d10] border-[#02b36d30]' : ''}`}
+                          className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#FFD70020] last:border-b-0
+                                    ${selectedWallets.includes(wallet.privateKey) ? 'bg-[#FFD70010] border-[#FFD70030]' : ''}`}
                           onClick={() => toggleWalletSelection(wallet.privateKey)}
                         >
                           <div className={`w-5 h-5 mr-3 rounded flex items-center justify-center transition-all duration-300
                                           ${selectedWallets.includes(wallet.privateKey)
-                                            ? 'bg-[#02b36d] shadow-md shadow-[#02b36d40]' 
-                                            : 'border border-[#02b36d30] bg-[#091217]'}`}>
+                                            ? 'bg-[#FFD700] shadow-md shadow-[#FFD70040]' 
+                                            : 'border border-[#FFD70030] bg-[#091217]'}`}>
                             {selectedWallets.includes(wallet.privateKey) && (
                               <CheckCircle size={14} className="text-[#050a0e] animate-[fadeIn_0.2s_ease]" />
                             )}
                           </div>
                           <div className="flex-1">
-                            <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                            <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                           </div>
                         </div>
                       ))
                     ) : (
-                      <div className="p-3 text-sm text-[#7ddfbd] text-center font-mono">
+                      <div className="p-3 text-sm text-[#FFE4B5] text-center font-mono">
                         {searchTerm ? "NO WALLETS FOUND" : "NO WALLETS AVAILABLE"}
                       </div>
                     )}
@@ -457,13 +457,13 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 </div>
 
                 {selectedWallets.length > 0 && (
-                  <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30] mt-4">
+                  <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030] mt-4">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-[#7ddfbd] font-mono">SELECTED WALLETS: {selectedWallets.length}</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">SELECTED WALLETS: {selectedWallets.length}</span>
                       <button
                         type="button"
                         onClick={() => setSelectedWallets([])}
-                        className="text-xs px-2 py-0.5 bg-[#0a1419] rounded text-[#e4fbf2] hover:bg-[#02b36d20] hover:text-[#02b36d] transition-all font-mono modal-btn-cyberpunk"
+                        className="text-xs px-2 py-0.5 bg-[#0a1419] rounded text-[#FFE4B5] hover:bg-[#FFD70020] hover:text-[#FFD700] transition-all font-mono modal-btn-cyberpunk"
                       >
                         CLEAR ALL
                       </button>
@@ -472,7 +472,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                       {selectedWallets.slice(0, 5).map((privateKey) => {
                         const address = getAddressFromPrivateKey(privateKey);
                         return (
-                          <div key={privateKey} className="bg-[#0a1419] rounded px-2 py-1 text-xs font-mono text-[#e4fbf2] flex items-center border border-[#02b36d20]">
+                          <div key={privateKey} className="bg-[#0a1419] rounded px-2 py-1 text-xs font-mono text-[#FFE4B5] flex items-center border border-[#FFD70020]">
                             {formatAddress(address)}
                             <button
                               type="button"
@@ -480,7 +480,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                                 e.stopPropagation();
                                 toggleWalletSelection(privateKey);
                               }}
-                              className="ml-1 text-[#7ddfbd] hover:text-[#02b36d]"
+                              className="ml-1 text-[#FFE4B5] hover:text-[#FFD700]"
                             >
                               <X size={12} />
                             </button>
@@ -488,7 +488,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                         );
                       })}
                       {selectedWallets.length > 5 && (
-                        <div className="bg-[#0a1419] rounded px-2 py-1 text-xs text-[#e4fbf2] font-mono border border-[#02b36d20]">
+                        <div className="bg-[#0a1419] rounded px-2 py-1 text-xs text-[#FFE4B5] font-mono border border-[#FFD70020]">
                           +{selectedWallets.length - 5} more
                         </div>
                       )}
@@ -503,20 +503,20 @@ export const PnlModal: React.FC<PnlModalProps> = ({
               <div className="space-y-5 animate-[fadeIn_0.3s_ease]">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-[#02b36d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg className="w-5 h-5 text-[#FFD700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 8v4M12 16h.01" />
                     </svg>
-                    <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                      <span className="text-[#02b36d]">&#62;</span> PNL RESULTS <span className="text-[#02b36d]">&#60;</span>
+                    <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                      <span className="text-[#FFD700]">&#62;</span> PNL RESULTS <span className="text-[#FFD700]">&#60;</span>
                     </h3>
                   </div>
                   <button
                     type="button"
                     onClick={() => setCurrentStep(2)}
-                    className="flex items-center px-3 py-1.5 bg-[#091217] hover:bg-[#0a1419] text-[#e4fbf2] rounded-lg transition-all border border-[#02b36d30] hover:border-[#02b36d] font-mono text-sm modal-btn-cyberpunk"
+                    className="flex items-center px-3 py-1.5 bg-[#091217] hover:bg-[#0a1419] text-[#FFE4B5] rounded-lg transition-all border border-[#FFD70030] hover:border-[#FFD700] font-mono text-sm modal-btn-cyberpunk"
                   >
-                    <svg className="w-4 h-4 mr-1.5 text-[#02b36d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg className="w-4 h-4 mr-1.5 text-[#FFD700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
                     </svg>
                     CREATE SHARE CARD
@@ -524,42 +524,42 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 </div>
 
                 {/* Token Information */}
-                <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30] mb-4">
+                <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030] mb-4">
                   <div className="flex justify-between items-center mt-2">
-                    <span className="text-sm text-[#7ddfbd] font-mono">TOKEN ADDRESS:</span>
-                    <span className="text-sm font-mono text-[#e4fbf2] glitch-text">
+                    <span className="text-sm text-[#FFE4B5] font-mono">TOKEN ADDRESS:</span>
+                    <span className="text-sm font-mono text-[#FFE4B5] glitch-text">
                       {tokenAddress.slice(0, 6)}...{tokenAddress.slice(-4)}
                     </span>
                   </div>
                   <div className="flex justify-between items-center mt-2">
-                    <span className="text-sm text-[#7ddfbd] font-mono">WALLETS ANALYZED:</span>
-                    <span className="text-sm text-[#e4fbf2] font-mono">{selectedWallets.length}</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">WALLETS ANALYZED:</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">{selectedWallets.length}</span>
                   </div>
                 </div>
 
                 {isLoading ? (
                   <div className="flex flex-col items-center justify-center py-12">
-                    <div className="h-12 w-12 border-4 border-[#02b36d30] border-t-[#02b36d] rounded-full animate-spin mb-4"></div>
-                    <p className="text-[#e4fbf2] font-mono">CALCULATING PNL ACROSS WALLETS...</p>
+                    <div className="h-12 w-12 border-4 border-[#FFD70030] border-t-[#FFD700] rounded-full animate-spin mb-4"></div>
+                    <p className="text-[#FFE4B5] font-mono">CALCULATING PNL ACROSS WALLETS...</p>
                   </div>
                 ) : (
                   <>
                     {/* Results Table */}
-                    <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#02b36d30]">
+                    <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#FFD70030]">
                       <div className="overflow-x-auto">
                         <table className="w-full">
                           <thead>
                             <tr className="bg-[#0a1419]">
-                              <th className="px-4 py-3 text-left text-xs font-medium text-[#7ddfbd] uppercase tracking-wider border-b border-[#02b36d30] font-mono">
+                              <th className="px-4 py-3 text-left text-xs font-medium text-[#FFE4B5] uppercase tracking-wider border-b border-[#FFD70030] font-mono">
                                 Wallet
                               </th>
-                              <th className="px-4 py-3 text-right text-xs font-medium text-[#7ddfbd] uppercase tracking-wider border-b border-[#02b36d30] font-mono">
+                              <th className="px-4 py-3 text-right text-xs font-medium text-[#FFE4B5] uppercase tracking-wider border-b border-[#FFD70030] font-mono">
                                 PNL
                               </th>
-                              <th className="px-4 py-3 text-right text-xs font-medium text-[#7ddfbd] uppercase tracking-wider border-b border-[#02b36d30] font-mono">
+                              <th className="px-4 py-3 text-right text-xs font-medium text-[#FFE4B5] uppercase tracking-wider border-b border-[#FFD70030] font-mono">
                                 Balance
                               </th>
-                              <th className="px-4 py-3 text-right text-xs font-medium text-[#7ddfbd] uppercase tracking-wider border-b border-[#02b36d30] font-mono">
+                              <th className="px-4 py-3 text-right text-xs font-medium text-[#FFE4B5] uppercase tracking-wider border-b border-[#FFD70030] font-mono">
                                 Last Update
                               </th>
                             </tr>
@@ -568,19 +568,19 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                             {selectedWallets.map(privateKey => {
                               const address = getAddressFromPrivateKey(privateKey);
                               const data = pnlData[address];
-                              const profit = data ? formatProfit(data.profit) : { text: '0.0000', class: 'text-[#7ddfbd]' };
+                              const profit = data ? formatProfit(data.profit) : { text: '0.0000', class: 'text-[#FFE4B5]' };
                               return (
-                                <tr key={privateKey} className="border-b border-[#02b36d20] last:border-b-0 hover:bg-[#0a1419]">
-                                  <td className="px-4 py-3 text-sm font-mono text-[#e4fbf2] whitespace-nowrap glitch-text">
+                                <tr key={privateKey} className="border-b border-[#FFD70020] last:border-b-0 hover:bg-[#0a1419]">
+                                  <td className="px-4 py-3 text-sm font-mono text-[#FFE4B5] whitespace-nowrap glitch-text">
                                     {formatAddress(address)}
                                   </td>
                                   <td className={`px-4 py-3 text-sm text-right font-semibold whitespace-nowrap font-mono ${profit.class}`}>
                                     {data ? profit.text : '-'}
                                   </td>
-                                  <td className="px-4 py-3 text-sm text-right text-[#e4fbf2] whitespace-nowrap font-mono">
+                                  <td className="px-4 py-3 text-sm text-right text-[#FFE4B5] whitespace-nowrap font-mono">
                                     -
                                   </td>
-                                  <td className="px-4 py-3 text-xs text-right text-[#7ddfbd] whitespace-nowrap font-mono">
+                                  <td className="px-4 py-3 text-xs text-right text-[#FFE4B5] whitespace-nowrap font-mono">
                                     {data ? formatTimestamp(data.timestamp) : '-'}
                                   </td>
                                 </tr>
@@ -593,9 +593,9 @@ export const PnlModal: React.FC<PnlModalProps> = ({
 
                     {/* Summary Cards */}
                     <div className="grid grid-cols-2 gap-4 mt-4 grid-cols-responsive">
-                      <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4">
-                        <h4 className="text-base font-semibold text-[#e4fbf2] mb-3 font-mono">
-                          <span className="text-[#02b36d]">&lt;</span> PNL SUMMARY <span className="text-[#02b36d]">&gt;</span>
+                      <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4">
+                        <h4 className="text-base font-semibold text-[#FFE4B5] mb-3 font-mono">
+                          <span className="text-[#FFD700]">&lt;</span> PNL SUMMARY <span className="text-[#FFD700]">&gt;</span>
                         </h4>
                         
                         {/* Calculate total profit, best and worst performers */}
@@ -629,57 +629,57 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                           return (
                             <div className="space-y-3">
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-[#7ddfbd] font-mono">TOTAL PNL:</span>
-                                <span className={`text-sm font-semibold font-mono ${totalProfit > 0 ? 'text-[#02b36d]' : totalProfit < 0 ? 'text-red-400' : 'text-[#7ddfbd]'}`}>
+                                <span className="text-sm text-[#FFE4B5] font-mono">TOTAL PNL:</span>
+                                <span className={`text-sm font-semibold font-mono ${totalProfit > 0 ? 'text-[#FFD700]' : totalProfit < 0 ? 'text-red-400' : 'text-[#FFE4B5]'}`}>
                                   {hasData ? (totalProfit > 0 ? '+' : '') + totalProfit.toFixed(4) : '-'}
                                 </span>
                               </div>
                               
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-[#7ddfbd] font-mono">BEST PERFORMER:</span>
+                                <span className="text-sm text-[#FFE4B5] font-mono">BEST PERFORMER:</span>
                                 <div className="flex items-center">
                                   {hasData && bestProfit !== -Infinity ? (
                                     <>
-                                      <span className="text-sm font-mono text-[#e4fbf2] mr-2 glitch-text">
+                                      <span className="text-sm font-mono text-[#FFE4B5] mr-2 glitch-text">
                                         {formatAddress(bestAddress)}
                                       </span>
-                                      <span className="text-sm font-semibold text-[#02b36d] font-mono">
+                                      <span className="text-sm font-semibold text-[#FFD700] font-mono">
                                         {bestProfit > 0 ? '+' : ''}{bestProfit.toFixed(4)}
                                       </span>
                                     </>
                                   ) : (
-                                    <span className="text-sm text-[#7ddfbd] font-mono">-</span>
+                                    <span className="text-sm text-[#FFE4B5] font-mono">-</span>
                                   )}
                                 </div>
                               </div>
                               
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-[#7ddfbd] font-mono">WORST PERFORMER:</span>
+                                <span className="text-sm text-[#FFE4B5] font-mono">WORST PERFORMER:</span>
                                 <div className="flex items-center">
                                   {hasData && worstProfit !== Infinity ? (
                                     <>
-                                      <span className="text-sm font-mono text-[#e4fbf2] mr-2 glitch-text">
+                                      <span className="text-sm font-mono text-[#FFE4B5] mr-2 glitch-text">
                                         {formatAddress(worstAddress)}
                                       </span>
-                                      <span className={`text-sm font-semibold font-mono ${worstProfit < 0 ? 'text-red-400' : 'text-[#02b36d]'}`}>
+                                      <span className={`text-sm font-semibold font-mono ${worstProfit < 0 ? 'text-red-400' : 'text-[#FFD700]'}`}>
                                         {worstProfit > 0 ? '+' : ''}{worstProfit.toFixed(4)}
                                       </span>
                                     </>
                                   ) : (
-                                    <span className="text-sm text-[#7ddfbd] font-mono">-</span>
+                                    <span className="text-sm text-[#FFE4B5] font-mono">-</span>
                                   )}
                                 </div>
                               </div>
                               
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-[#7ddfbd] font-mono">PROFITABLE WALLETS:</span>
-                                <span className="text-sm text-[#02b36d] font-mono">
+                                <span className="text-sm text-[#FFE4B5] font-mono">PROFITABLE WALLETS:</span>
+                                <span className="text-sm text-[#FFD700] font-mono">
                                   {hasData ? Object.values(pnlData).filter(data => data.profit > 0).length : '-'}
                                 </span>
                               </div>
                               
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-[#7ddfbd] font-mono">UNPROFITABLE WALLETS:</span>
+                                <span className="text-sm text-[#FFE4B5] font-mono">UNPROFITABLE WALLETS:</span>
                                 <span className="text-sm text-red-400 font-mono">
                                   {hasData ? Object.values(pnlData).filter(data => data.profit < 0).length : '-'}
                                 </span>
@@ -689,14 +689,14 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                         })()}
                       </div>
                       
-                      <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4">
-                        <h4 className="text-base font-semibold text-[#e4fbf2] mb-3 font-mono">
-                          <span className="text-[#02b36d]">&lt;</span> DATA INFO <span className="text-[#02b36d]">&gt;</span>
+                      <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4">
+                        <h4 className="text-base font-semibold text-[#FFE4B5] mb-3 font-mono">
+                          <span className="text-[#FFD700]">&lt;</span> DATA INFO <span className="text-[#FFD700]">&gt;</span>
                         </h4>
                         <div className="space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-[#7ddfbd] font-mono">DATA UPDATED:</span>
-                            <span className="text-sm text-[#e4fbf2] font-mono">
+                            <span className="text-sm text-[#FFE4B5] font-mono">DATA UPDATED:</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">
                               {Object.values(pnlData).length > 0 
                                 ? new Date(Math.max(...Object.values(pnlData).map(d => new Date(d.timestamp).getTime()))).toLocaleString() 
                                 : '-'}
@@ -704,17 +704,17 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                           </div>
                           
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-[#7ddfbd] font-mono">WALLETS WITH DATA:</span>
-                            <span className="text-sm text-[#e4fbf2] font-mono">{Object.keys(pnlData).length} / {selectedWallets.length}</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">WALLETS WITH DATA:</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">{Object.keys(pnlData).length} / {selectedWallets.length}</span>
                           </div>
                           
-                          <div className="text-xs text-[#7ddfbd] mt-2 leading-relaxed font-mono">
+                          <div className="text-xs text-[#FFE4B5] mt-2 leading-relaxed font-mono">
                             PNL data shows the calculated profit or loss for each wallet based on buys and sells.
                           </div>
                           
                           {Object.keys(pnlData).length < selectedWallets.length && (
-                            <div className="flex items-center mt-2 p-2 bg-[#091217] border border-[#02b36d30] rounded text-xs text-[#e4fbf2] font-mono">
-                              <Info size={14} className="mr-1 flex-shrink-0 text-[#02b36d]" />
+                            <div className="flex items-center mt-2 p-2 bg-[#091217] border border-[#FFD70030] rounded text-xs text-[#FFE4B5] font-mono">
+                              <Info size={14} className="mr-1 flex-shrink-0 text-[#FFD700]" />
                               <span>
                                 Some selected wallets don't have PNL data available. This may be because they have no history with this token.
                               </span>
@@ -732,16 +732,16 @@ export const PnlModal: React.FC<PnlModalProps> = ({
             {currentStep === 2 && (
               <div className="space-y-5 animate-[fadeIn_0.3s_ease]">
                 <div className="flex items-center space-x-2 mb-3">
-                  <svg className="w-5 h-5 text-[#02b36d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg className="w-5 h-5 text-[#FFD700]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
-                  <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                    <span className="text-[#02b36d]">&#62;</span> PNL SHARE CARD <span className="text-[#02b36d]">&#60;</span>
+                  <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                    <span className="text-[#FFD700]">&#62;</span> PNL SHARE CARD <span className="text-[#FFD700]">&#60;</span>
                   </h3>
                 </div>
                 
                 {/* PNL Card */}
-                <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4">
+                <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4">
                   <PnlCard 
                     pnlData={pnlData} 
                     tokenAddress={tokenAddress} 
@@ -749,8 +749,8 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                   />
                 </div>
                 
-                <div className="mt-2 p-3 bg-[#091217] rounded-lg border border-[#02b36d20]">
-                  <p className="text-xs text-[#7ddfbd] font-mono">
+                <div className="mt-2 p-3 bg-[#091217] rounded-lg border border-[#FFD70020]">
+                  <p className="text-xs text-[#FFE4B5] font-mono">
                     Download this card to share your PNL results with others. All sensitive wallet information is hidden.
                   </p>
                 </div>
@@ -763,7 +763,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 type="button"
                 onClick={currentStep === 0 ? onClose : handleBack}
                 disabled={isSubmitting}
-                className="px-5 py-2.5 text-[#e4fbf2] bg-[#091217] border border-[#02b36d30] hover:bg-[#0a1419] hover:border-[#02b36d] rounded-lg transition-all shadow-md font-mono tracking-wider modal-btn-cyberpunk"
+                className="px-5 py-2.5 text-[#FFE4B5] bg-[#091217] border border-[#FFD70030] hover:bg-[#0a1419] hover:border-[#FFD700] rounded-lg transition-all shadow-md font-mono tracking-wider modal-btn-cyberpunk"
               >
                 {currentStep === 0 ? 'CANCEL' : (
                   <div className="flex items-center">
@@ -780,8 +780,8 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                   disabled={isSubmitting || selectedWallets.length === 0}
                   className={`px-5 py-2.5 rounded-lg shadow-lg flex items-center transition-all duration-300 font-mono tracking-wider
                             ${isSubmitting || selectedWallets.length === 0
-                              ? 'bg-[#02b36d50] text-[#050a0e80] cursor-not-allowed opacity-50' 
-                              : 'bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                              ? 'bg-[#FFD70050] text-[#050a0e80] cursor-not-allowed opacity-50' 
+                              : 'bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
                 >
                   {isSubmitting ? (
                     <>
@@ -801,7 +801,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setCurrentStep(2)}
-                  className="px-5 py-2.5 bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] rounded-lg transition-all font-mono tracking-wider modal-btn-cyberpunk transform hover:-translate-y-0.5 shadow-lg"
+                  className="px-5 py-2.5 bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] rounded-lg transition-all font-mono tracking-wider modal-btn-cyberpunk transform hover:-translate-y-0.5 shadow-lg"
                 >
                   <div className="flex items-center">
                     CREATE SHARE CARD
@@ -814,7 +814,7 @@ export const PnlModal: React.FC<PnlModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-5 py-2.5 bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] rounded-lg transition-all font-mono tracking-wider modal-btn-cyberpunk transform hover:-translate-y-0.5 shadow-lg"
+                  className="px-5 py-2.5 bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] rounded-lg transition-all font-mono tracking-wider modal-btn-cyberpunk transform hover:-translate-y-0.5 shadow-lg"
                 >
                   CLOSE
                 </button>
@@ -824,10 +824,10 @@ export const PnlModal: React.FC<PnlModalProps> = ({
         </div>
         
         {/* Cyberpunk decorative corner elements */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
       </div>
     </div>,
     document.body

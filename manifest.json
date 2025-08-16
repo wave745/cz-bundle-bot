@@ -1,10 +1,21 @@
 {
-    "name": "Fury Bundler",
-    "short_name": "Fury",
+    "name": "CAESAR BOT - Solana Bundler",
+    "short_name": "CAESAR BOT",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#041726",
-    "background_color": "#041726",
+    "theme_color": "#FFD700",
+    "background_color": "#050a0e",
     "start_url": "/",
-    "icons": []
+    "icons": [
+      {
+        "src": "/CaesarBotLogo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/CaesarBotLogo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
   }

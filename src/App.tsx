@@ -1,8 +1,19 @@
-import React, { useEffect, lazy, useCallback, useReducer, useMemo } from 'react';
+import React, { useEffect, lazy, useCallback, useReducer, useMemo, useState } from 'react';
 import { X, Settings } from 'lucide-react';
 import { Connection } from '@solana/web3.js';
-import ServiceSelector from './Menu.tsx';
+
 import { WalletTooltip, initStyles } from './Styles';
+import { 
+  GoldParticleSystem, 
+  MatrixGoldRain, 
+  TradeSuccessAnimation,
+  EnhancedGoldBorder,
+  GoldGradientBackground,
+  EnhancedGoldButton,
+  GoldTextGlow,
+  GoldSuccessToast
+} from './EnhancedEffects';
+import CaesarBotLogo from './Logo';
 import { 
   saveWalletsToCookies,
   loadWalletsFromCookies,
@@ -94,28 +105,29 @@ const WalletManager: React.FC = () => {
     quickBuyMinAmount: number;
     quickBuyMaxAmount: number;
     useQuickBuyRange: boolean;
+    showSuccessAnimation: boolean;
     iframeData: {
-    tradingStats: any;
-    solPrice: number | null;
-    currentWallets: any[];
-    recentTrades: {
-      type: 'buy' | 'sell';
-      address: string;
-      tokensAmount: number;
-      avgPrice: number;
-      solAmount: number;
-      timestamp: number;
-      signature: string;
-    }[];
-    tokenPrice: {
-      tokenPrice: number;
-      tokenMint: string;
-      timestamp: number;
-      tradeType: 'buy' | 'sell';
-      volume: number;
+      tradingStats: any;
+      solPrice: number | null;
+      currentWallets: any[];
+      recentTrades: {
+        type: 'buy' | 'sell';
+        address: string;
+        tokensAmount: number;
+        avgPrice: number;
+        solAmount: number;
+        timestamp: number;
+        signature: string;
+      }[];
+      tokenPrice: {
+        tokenPrice: number;
+        tokenMint: string;
+        timestamp: number;
+        tradeType: 'buy' | 'sell';
+        volume: number;
+      } | null;
     } | null;
-  } | null;
-  }
+  };
 
   type AppAction = 
     | { type: 'SET_COPIED_ADDRESS'; payload: string | null }
@@ -146,7 +158,9 @@ const WalletManager: React.FC = () => {
     | { type: 'SET_QUICK_BUY_MIN_AMOUNT'; payload: number }
     | { type: 'SET_QUICK_BUY_MAX_AMOUNT'; payload: number }
     | { type: 'SET_USE_QUICK_BUY_RANGE'; payload: boolean }
-    | { type: 'SET_IFRAME_DATA'; payload: { tradingStats: any; solPrice: number | null; currentWallets: any[]; recentTrades: { type: 'buy' | 'sell'; address: string; tokensAmount: number; avgPrice: number; solAmount: number; timestamp: number; signature: string; }[]; tokenPrice: { tokenPrice: number; tokenMint: string; timestamp: number; tradeType: 'buy' | 'sell'; volume: number; } | null; } | null };
+    | { type: 'SET_IFRAME_DATA'; payload: { tradingStats: any; solPrice: number | null; currentWallets: any[]; recentTrades: { type: 'buy' | 'sell'; address: string; tokensAmount: number; avgPrice: number; solAmount: number; timestamp: number; signature: string; }[]; tokenPrice: { tokenPrice: number; tokenMint: string; timestamp: number; tradeType: 'buy' | 'sell'; volume: number; } | null; } | null }
+    | { type: 'SHOW_SUCCESS_ANIMATION' }
+    | { type: 'HIDE_SUCCESS_ANIMATION' };
 
   const initialState: AppState = {
     copiedAddress: null,
@@ -192,6 +206,7 @@ const WalletManager: React.FC = () => {
     quickBuyMinAmount: 0.01,
     quickBuyMaxAmount: 0.05,
     useQuickBuyRange: false,
+    showSuccessAnimation: false,
     iframeData: null
   };
 
@@ -286,6 +301,10 @@ const WalletManager: React.FC = () => {
         return { ...state, useQuickBuyRange: action.payload };
       case 'SET_IFRAME_DATA':
         return { ...state, iframeData: action.payload };
+      case 'SHOW_SUCCESS_ANIMATION':
+        return { ...state, showSuccessAnimation: true };
+      case 'HIDE_SUCCESS_ANIMATION':
+        return { ...state, showSuccessAnimation: false };
       default:
         return state;
     }
@@ -339,7 +358,9 @@ const WalletManager: React.FC = () => {
     setQuickBuyMinAmount: (amount: number) => dispatch({ type: 'SET_QUICK_BUY_MIN_AMOUNT', payload: amount }),
     setQuickBuyMaxAmount: (amount: number) => dispatch({ type: 'SET_QUICK_BUY_MAX_AMOUNT', payload: amount }),
     setUseQuickBuyRange: (useRange: boolean) => dispatch({ type: 'SET_USE_QUICK_BUY_RANGE', payload: useRange }),
-    setIframeData: (data: { tradingStats: any; solPrice: number | null; currentWallets: any[]; recentTrades: { type: 'buy' | 'sell'; address: string; tokensAmount: number; avgPrice: number; solAmount: number; timestamp: number; signature: string; }[]; tokenPrice: { tokenPrice: number; tokenMint: string; timestamp: number; tradeType: 'buy' | 'sell'; volume: number; } | null; } | null) => dispatch({ type: 'SET_IFRAME_DATA', payload: data })
+    setIframeData: (data: { tradingStats: any; solPrice: number | null; currentWallets: any[]; recentTrades: { type: 'buy' | 'sell'; address: string; tokensAmount: number; avgPrice: number; solAmount: number; timestamp: number; signature: string; }[]; tokenPrice: { tokenPrice: number; tokenMint: string; timestamp: number; tradeType: 'buy' | 'sell'; volume: number; } | null; } | null) => dispatch({ type: 'SET_IFRAME_DATA', payload: data }),
+    showSuccessAnimation: () => dispatch({ type: 'SHOW_SUCCESS_ANIMATION' }),
+    hideSuccessAnimation: () => dispatch({ type: 'HIDE_SUCCESS_ANIMATION' })
   }), []);
 
   // Separate callbacks for config updates to prevent unnecessary re-renders
@@ -676,17 +697,30 @@ const WalletManager: React.FC = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-[#050a0e] text-[#b3f0d7] cyberpunk-bg">
+    <div className="h-screen flex flex-col overflow-hidden bg-[#050a0e] text-[#FFE4B5] cyberpunk-bg">
+      {/* Enhanced Gold Visual Effects */}
+      <GoldParticleSystem />
+      <MatrixGoldRain />
+      
+      {/* Success Animation */}
+      <TradeSuccessAnimation 
+        isVisible={state.showSuccessAnimation} 
+        onComplete={memoizedCallbacks.hideSuccessAnimation} 
+      />
+      
       {/* Cyberpunk scanline effect */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-10"></div>
       
 
       
       {/* Top Navigation */}
-      <nav className="relative border-b border-[#02b36d70] px-4 py-2 backdrop-blur-sm bg-[#050a0e99] z-20">
+      <nav className="relative border-b border-[#FFD70070] px-4 py-2 backdrop-blur-sm bg-[#050a0e99] z-20">
         <div className="flex items-center gap-3">
+          
+          {/* CAESAR BOT Logo */}
+          <CaesarBotLogo size="medium" />
 
-        <ServiceSelector />
+
           
           <div className="relative flex-1 mx-4">
             <input
@@ -694,14 +728,14 @@ const WalletManager: React.FC = () => {
               placeholder="TOKEN ADDRESS"
               value={state.tokenAddress}
               onChange={(e) => memoizedCallbacks.setTokenAddress(e.target.value)}
-              className="w-full bg-[#0a1419] border border-[#02b36d40] rounded px-3 py-2 text-sm text-[#e4fbf2] focus:border-[#02b36d] focus:outline-none cyberpunk-input font-mono tracking-wider"
+              className="w-full bg-[#0a1419] border border-[#FFD70040] rounded px-3 py-2 text-sm text-[#FFE4B5] focus:border-[#FFD700] focus:outline-none cyberpunk-input font-mono tracking-wider"
             />
-            <div className="absolute right-3 top-2.5 text-[#02b36d40] text-xs font-mono">SOL</div>
+            <div className="absolute right-3 top-2.5 text-[#FFD70040] text-xs font-mono">SOL</div>
           </div>
           
           <WalletTooltip content="Paste from clipboard" position="bottom">
-            <button
-              className="p-2 border border-[#02b36d40] hover:border-[#02b36d] bg-[#0a1419] rounded cyberpunk-btn"
+            <EnhancedGoldButton
+              className="p-2 border border-[#FFD70040] hover:border-[#FFD700] bg-[#0a1419] rounded"
               onClick={async () => {
                 try {
                   const text = await navigator.clipboard.readText();
@@ -714,28 +748,28 @@ const WalletManager: React.FC = () => {
                 }
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#02b36d]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#FFD700]">
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
               </svg>
-            </button>
+            </EnhancedGoldButton>
           </WalletTooltip>          
           
           <WalletTooltip content="Open Settings" position="bottom">
-            <button 
-              className="p-2 border border-[#02b36d40] hover:border-[#02b36d] bg-[#0a1419] rounded cyberpunk-btn"
+            <EnhancedGoldButton 
+              className="p-2 border border-[#FFD70040] hover:border-[#FFD700] bg-[#0a1419] rounded"
               onClick={() => memoizedCallbacks.setIsSettingsOpen(true)}
             >
-              <Settings size={20} className="text-[#02b36d]" />
-            </button>
+              <Settings size={20} className="text-[#FFD700]" />
+            </EnhancedGoldButton>
           </WalletTooltip>
 
           <div className="flex items-center ml-4">
             <div className="flex flex-col items-start">
-              <div className="text-xs text-[#7ddfbd] font-mono uppercase tracking-wider">WALLETS</div>
-              <div className={`font-bold text-[#02b36d] font-mono ${state.tickEffect ? 'scale-110 transition-transform' : 'transition-transform'}`}>
-                {state.wallets.length}
-              </div>
+              <div className="text-xs text-[#FFE4B5] font-mono uppercase tracking-wider">WALLETS</div>
+                             <div className={`font-bold text-[#FFD700] font-mono gold-text-glow ${state.tickEffect ? 'scale-110 transition-transform' : 'transition-transform'}`}>
+                 {state.wallets.length}
+               </div>
             </div>
           </div>
         </div>
@@ -760,7 +794,7 @@ const WalletManager: React.FC = () => {
             }}
           >
             {/* Left Column */}
-            <div className="backdrop-blur-sm bg-[#050a0e99] border-r border-[#02b36d40] overflow-y-auto">
+            <div className="backdrop-blur-sm bg-[#050a0e99] border-r border-[#FFD70040] overflow-y-auto">
               {state.connection && (
                 <WalletsPage
                   wallets={state.wallets}
@@ -789,7 +823,7 @@ const WalletManager: React.FC = () => {
             </div>
 
             {/* Middle Column */}
-            <div className="backdrop-blur-sm bg-[#050a0e99] border-r border-[#02b36d40] overflow-y-auto">
+            <div className="backdrop-blur-sm bg-[#050a0e99] border-r border-[#FFD70040] overflow-y-auto">
               <ChartPage
               isLoadingChart={state.isLoadingChart}
               tokenAddress={state.tokenAddress}
@@ -852,9 +886,9 @@ const WalletManager: React.FC = () => {
                   setUseQuickBuyRange={memoizedCallbacks.setUseQuickBuyRange}
                 />
               ) : (
-                <div className="p-4 text-center text-[#7ddfbd]">
+                <div className="p-4 text-center text-[#FFE4B5]">
                   <div className="loading-anim inline-block">
-                    <div className="h-4 w-4 rounded-full bg-[#02b36d] mx-auto"></div>
+                    <div className="h-4 w-4 rounded-full bg-[#FFD700] mx-auto"></div>
                   </div>
                   <p className="mt-2 font-mono">CONNECTING TO NETWORK...</p>
                 </div>

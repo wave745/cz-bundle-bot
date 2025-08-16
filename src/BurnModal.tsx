@@ -432,7 +432,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
     }
     
     .glitch-text:hover {
-      text-shadow: 0 0 2px #02b36d, 0 0 4px #02b36d;
+      text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700;
       animation: glitch 2s infinite;
     }
     
@@ -519,12 +519,12 @@ export const BurnModal: React.FC<BurnModalProps> = ({
     }
     
     .cyberpunk-scrollbar::-webkit-scrollbar-thumb {
-      background: #02b36d50;
+      background: #FFD70050;
       border-radius: 3px;
     }
     
     .cyberpunk-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: #02b36d;
+      background: #FFD700;
     }
     
     /* Responsive styles */
@@ -540,7 +540,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm modal-cyberpunk-container" style={{backgroundColor: 'rgba(5, 10, 14, 0.85)'}}>
-      <div className="relative bg-[#050a0e] border border-[#02b36d40] rounded-lg shadow-lg w-full max-w-2xl overflow-hidden transform modal-cyberpunk-content modal-glow">
+      <div className="relative bg-[#050a0e] border border-[#FFD70040] rounded-lg shadow-lg w-full max-w-2xl overflow-hidden transform modal-cyberpunk-content modal-glow">
         {/* Ambient grid background */}
         <div className="absolute inset-0 z-0 opacity-10"
              style={{
@@ -551,18 +551,18 @@ export const BurnModal: React.FC<BurnModalProps> = ({
         </div>
 
         {/* Header */}
-        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#02b36d40]">
+        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#FFD70040]">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#02b36d20] mr-3">
-              <ArrowDown size={16} className="text-[#02b36d]" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#FFD70020] mr-3">
+              <ArrowDown size={16} className="text-[#FFD700]" />
             </div>
-            <h2 className="text-lg font-semibold text-[#e4fbf2] font-mono">
-              <span className="text-[#02b36d]">/</span> BURN PROTOCOL <span className="text-[#02b36d]">/</span>
+            <h2 className="text-lg font-semibold text-[#FFE4B5] font-mono">
+              <span className="text-[#FFD700]">/</span> BURN PROTOCOL <span className="text-[#FFD700]">/</span>
             </h2>
           </div>
           <button 
             onClick={onClose}
-            className="text-[#7ddfbd] hover:text-[#02b36d] transition-colors p-1 hover:bg-[#02b36d20] rounded"
+            className="text-[#FFE4B5] hover:text-[#FFD700] transition-colors p-1 hover:bg-[#FFD70020] rounded"
           >
             <X size={18} />
           </button>
@@ -571,7 +571,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
         {/* Progress Indicator */}
         <div className="relative w-full h-1 bg-[#091217] progress-bar-cyberpunk">
           <div 
-            className="h-full bg-[#02b36d] transition-all duration-300"
+            className="h-full bg-[#FFD700] transition-all duration-300"
             style={{ width: `${((currentStep + 1) / STEPS_BURN.length) * 100}%` }}
           ></div>
         </div>
@@ -586,9 +586,9 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                 <div className="flex-1 flex flex-col items-center relative z-10">
                   <div className={`w-8 h-8 rounded-full font-mono flex items-center justify-center border-2 transition-all duration-300 ${
                     index < currentStep 
-                      ? 'border-[#02b36d] bg-[#02b36d] text-[#050a0e]' 
+                      ? 'border-[#FFD700] bg-[#FFD700] text-[#050a0e]' 
                       : index === currentStep 
-                        ? 'border-[#02b36d] text-[#02b36d] bg-[#050a0e] modal-glow' 
+                        ? 'border-[#FFD700] text-[#FFD700] bg-[#050a0e] modal-glow' 
                         : 'border-[#2a3a42] text-[#2a3a42] bg-[#050a0e]'
                   }`}>
                     {index < currentStep ? (
@@ -600,7 +600,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                   
                   {/* Step label */}
                   <span className={`mt-2 text-xs transition-all duration-300 font-mono tracking-wide ${
-                    index <= currentStep ? 'text-[#e4fbf2]' : 'text-[#4d6068]'
+                    index <= currentStep ? 'text-[#FFE4B5]' : 'text-[#4d6068]'
                   }`}>
                     {step}
                   </span>
@@ -611,7 +611,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                   <div className="flex-1 flex items-center justify-center relative -mx-1 pb-8 z-0">
                     <div className="h-px w-full bg-[#2a3a42] relative">
                       <div 
-                        className="absolute top-0 left-0 h-full bg-[#02b36d] transition-all duration-500"
+                        className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-500"
                         style={{ width: index < currentStep ? '100%' : '0%' }}
                       ></div>
                     </div>
@@ -628,14 +628,14 @@ export const BurnModal: React.FC<BurnModalProps> = ({
               <div className={`space-y-4 ${modalClass || 'animate-content-fade'}`}>
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
-                    <div className="text-[#02b36d] border border-[#02b36d30] p-1 rounded">
+                    <div className="text-[#FFD700] border border-[#FFD70030] p-1 rounded">
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <rect x="2" y="5" width="20" height="14" rx="2" />
                         <path d="M16 10h2M6 14h12" />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                      <span className="text-[#02b36d]">/</span> SELECT SOURCE <span className="text-[#02b36d]">/</span>
+                    <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                      <span className="text-[#FFD700]">/</span> SELECT SOURCE <span className="text-[#FFD700]">/</span>
                     </h3>
                   </div>
                 </div>
@@ -643,18 +643,18 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                 {/* Search and Filters */}
                 <div className="mb-3 flex space-x-2">
                   <div className="relative flex-grow">
-                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7ddfbd]" />
+                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FFE4B5]" />
                     <input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono tracking-wider"
+                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono tracking-wider"
                       placeholder="SEARCH WALLETS_"
                     />
                   </div>
                   
                   <select 
-                    className="bg-[#091217] border border-[#02b36d30] rounded-lg px-3 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                    className="bg-[#091217] border border-[#FFD70030] rounded-lg px-3 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                     value={sortOption}
                     onChange={(e) => setSortOption(e.target.value)}
                   >
@@ -665,7 +665,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                   
                   <button
                     type="button"
-                    className="p-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#7ddfbd] hover:text-[#e4fbf2] hover:border-[#02b36d] transition-all modal-btn-cyberpunk"
+                    className="p-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] hover:text-[#FFE4B5] hover:border-[#FFD700] transition-all modal-btn-cyberpunk"
                     onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
                   >
                     {sortDirection === 'asc' ? '↑' : '↓'}
@@ -674,7 +674,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
 
                 <div className="mb-3">
                   <select 
-                    className="w-full bg-[#091217] border border-[#02b36d30] rounded-lg p-2 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                    className="w-full bg-[#091217] border border-[#FFD70030] rounded-lg p-2 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                     value={balanceFilter}
                     onChange={(e) => setBalanceFilter(e.target.value)}
                   >
@@ -686,34 +686,34 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                 </div>
 
                 {/* Wallet Selection */}
-                <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#02b36d30]">
+                <div className="bg-[#091217] rounded-lg overflow-hidden border border-[#FFD70030]">
                   <div className="max-h-64 overflow-y-auto cyberpunk-scrollbar">
                     {filterWallets(wallets, searchTerm).length > 0 ? (
                       filterWallets(wallets, searchTerm).map((wallet) => (
                         <div 
                           key={wallet.id}
-                          className={`flex items-center p-3 cursor-pointer border-b border-[#02b36d20] last:border-b-0 transition-all duration-150 hover:bg-[#0a1419]
+                          className={`flex items-center p-3 cursor-pointer border-b border-[#FFD70020] last:border-b-0 transition-all duration-150 hover:bg-[#0a1419]
                                     ${sourceWallet === wallet.privateKey 
-                                      ? 'bg-[#02b36d10] border-l-2 border-l-[#02b36d]' 
-                                      : 'border-l-2 border-l-transparent hover:border-l-[#02b36d50]'}`}
+                                      ? 'bg-[#FFD70010] border-l-2 border-l-[#FFD700]' 
+                                      : 'border-l-2 border-l-transparent hover:border-l-[#FFD70050]'}`}
                           onClick={() => setSourceWallet(wallet.privateKey)}
                         >
                           <div className={`w-4 h-4 mr-3 rounded-full flex items-center justify-center transition-all duration-200
                                           ${sourceWallet === wallet.privateKey
-                                            ? 'bg-[#02b36d] modal-glow' 
-                                            : 'border border-[#7ddfbd]'}`}>
+                                            ? 'bg-[#FFD700] modal-glow' 
+                                            : 'border border-[#FFE4B5]'}`}>
                             {sourceWallet === wallet.privateKey && (
                               <CheckCircle size={10} className="text-[#0a0e12]" />
                             )}
                           </div>
                           <div className="flex-1 flex justify-between items-center">
-                            <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                            <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                             <div className="flex flex-col items-end">
-                              <span className="text-xs text-[#7ddfbd] font-mono">
+                              <span className="text-xs text-[#FFE4B5] font-mono">
                                 {(solBalances.get(wallet.address) || 0).toFixed(4)} SOL
                               </span>
                               {(tokenBalances.get(wallet.address) || 0) > 0 && (
-                                <span className="text-xs text-[#02b36d] font-mono">
+                                <span className="text-xs text-[#FFD700] font-mono">
                                   {(tokenBalances.get(wallet.address) || 0).toFixed(4)} {tokenAddress.slice(0, 4)}
                                 </span>
                               )}
@@ -722,7 +722,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                         </div>
                       ))
                     ) : (
-                      <div className="p-4 text-sm text-[#7ddfbd] text-center font-mono">
+                      <div className="p-4 text-sm text-[#FFE4B5] text-center font-mono">
                         {searchTerm 
                           ? "[ NO MATCHING WALLETS FOUND ]" 
                           : "[ NO WALLETS AVAILABLE ]"}
@@ -732,23 +732,23 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                 </div>
 
                 {sourceWallet && (
-                  <div className="mt-4 p-4 rounded-lg border border-[#02b36d30] bg-[#02b36d05] modal-glow">
+                  <div className="mt-4 p-4 rounded-lg border border-[#FFD70030] bg-[#FFD70005] modal-glow">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-[#02b36d] font-mono tracking-wide">SELECTED_WALLET</span>
-                      <div className="flex items-center bg-[#091217] px-2 py-1 rounded-lg border border-[#02b36d20]">
-                        <span className="text-sm font-mono text-[#e4fbf2] glitch-text">
+                      <span className="text-sm text-[#FFD700] font-mono tracking-wide">SELECTED_WALLET</span>
+                      <div className="flex items-center bg-[#091217] px-2 py-1 rounded-lg border border-[#FFD70020]">
+                        <span className="text-sm font-mono text-[#FFE4B5] glitch-text">
                           {formatAddress(wallets.find(w => w.privateKey === sourceWallet)?.address || '')}
                         </span>
                       </div>
                     </div>
                     
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-sm text-[#7ddfbd] font-mono">BALANCES</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">BALANCES</span>
                       <div className="flex flex-col items-end">
-                        <span className="text-sm text-[#e4fbf2] font-mono">
+                        <span className="text-sm text-[#FFE4B5] font-mono">
                           {(solBalances.get(wallets.find(w => w.privateKey === sourceWallet)?.address || '') || 0).toFixed(4)} SOL
                         </span>
-                        <span className="text-sm text-[#02b36d] font-mono">
+                        <span className="text-sm text-[#FFD700] font-mono">
                           {(tokenBalances.get(wallets.find(w => w.privateKey === sourceWallet)?.address || '') || 0).toFixed(4)} {tokenAddress.slice(0, 4)}
                         </span>
                       </div>
@@ -762,48 +762,48 @@ export const BurnModal: React.FC<BurnModalProps> = ({
             {currentStep === 1 && (
               <div className={`space-y-6 ${modalClass || 'animate-content-fade'}`}>
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="text-[#02b36d] border border-[#02b36d30] p-1 rounded">
+                  <div className="text-[#FFD700] border border-[#FFD70030] p-1 rounded">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M12 19l-7-7 7-7M5 12h14" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                    <span className="text-[#02b36d]">/</span> BURN AMOUNT <span className="text-[#02b36d]">/</span>
+                  <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                    <span className="text-[#FFD700]">/</span> BURN AMOUNT <span className="text-[#FFD700]">/</span>
                   </h3>
                 </div>
 
                 {isLoadingTokens ? (
                   <div className="flex justify-center items-center h-32">
                     <div className="relative h-12 w-12">
-                      <div className="absolute inset-0 rounded-full border-2 border-t-[#02b36d] border-r-[#02b36d30] border-b-[#02b36d10] border-l-[#02b36d30] animate-spin"></div>
-                      <div className="absolute inset-2 rounded-full border-2 border-t-transparent border-r-[#02b36d70] border-b-[#02b36d50] border-l-transparent animate-spin-slow"></div>
-                      <div className="absolute inset-0 rounded-full border border-[#02b36d20] modal-glow"></div>
+                      <div className="absolute inset-0 rounded-full border-2 border-t-[#FFD700] border-r-[#FFD70030] border-b-[#FFD70010] border-l-[#FFD70030] animate-spin"></div>
+                      <div className="absolute inset-2 rounded-full border-2 border-t-transparent border-r-[#FFD70070] border-b-[#FFD70050] border-l-transparent animate-spin-slow"></div>
+                      <div className="absolute inset-0 rounded-full border border-[#FFD70020] modal-glow"></div>
                     </div>
                   </div>
                 ) : (
                   <div className="space-y-4">
                     {/* Selected Token Info */}
-                    <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30]">
+                    <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030]">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm text-[#e4fbf2] font-mono">SELECTED_TOKEN</span>
+                        <span className="text-sm text-[#FFE4B5] font-mono">SELECTED_TOKEN</span>
                         {tokenAccounts.find(t => t.mint === tokenAddress) ? (
                           <div className="flex items-center">
-                            <div className="w-6 h-6 rounded-full bg-[#02b36d20] border border-[#02b36d30] flex items-center justify-center mr-2">
-                              <span className="text-xs text-[#02b36d] font-mono">
+                            <div className="w-6 h-6 rounded-full bg-[#FFD70020] border border-[#FFD70030] flex items-center justify-center mr-2">
+                              <span className="text-xs text-[#FFD700] font-mono">
                                 {getSelectedTokenSymbol()[0] || 'T'}
                               </span>
                             </div>
                             <div className="flex flex-col">
-                              <span className="text-sm text-[#e4fbf2] font-mono">
+                              <span className="text-sm text-[#FFE4B5] font-mono">
                                 {getSelectedTokenSymbol()}
                               </span>
-                              <span className="text-xs text-[#7ddfbd] font-mono">
+                              <span className="text-xs text-[#FFE4B5] font-mono">
                                 BAL: {getSelectedTokenBalance()}
                               </span>
                             </div>
                           </div>
                         ) : (
-                          <span className="text-sm text-[#7ddfbd] font-mono">
+                          <span className="text-sm text-[#FFE4B5] font-mono">
                             {tokenAddress.slice(0, 6)}...{tokenAddress.slice(-4)}
                           </span>
                         )}
@@ -811,29 +811,29 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                     </div>
 
                     {/* Source Wallet Info */}
-                    <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30]">
+                    <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030]">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm text-[#e4fbf2] font-mono">SOURCE_WALLET</span>
+                        <span className="text-sm text-[#FFE4B5] font-mono">SOURCE_WALLET</span>
                         <div className="flex items-center">
-                          <div className="w-6 h-6 rounded-full bg-[#091217] border border-[#02b36d30] flex items-center justify-center mr-2">
-                            <svg className="w-3 h-3 text-[#7ddfbd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <div className="w-6 h-6 rounded-full bg-[#091217] border border-[#FFD70030] flex items-center justify-center mr-2">
+                            <svg className="w-3 h-3 text-[#FFE4B5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                               <rect x="2" y="5" width="20" height="14" rx="2" />
                               <path d="M16 10h2M6 14h12" />
                             </svg>
                           </div>
-                          <span className="text-sm text-[#e4fbf2] font-mono glitch-text">
+                          <span className="text-sm text-[#FFE4B5] font-mono glitch-text">
                             {formatAddress(wallets.find(w => w.privateKey === sourceWallet)?.address || '')}
                           </span>
                         </div>
                       </div>
                       
                       <div className="flex justify-between items-center mt-2">
-                        <span className="text-sm text-[#7ddfbd] font-mono">BALANCES</span>
+                        <span className="text-sm text-[#FFE4B5] font-mono">BALANCES</span>
                         <div className="flex flex-col items-end">
-                          <span className="text-sm text-[#e4fbf2] font-mono">
+                          <span className="text-sm text-[#FFE4B5] font-mono">
                             {(solBalances.get(wallets.find(w => w.privateKey === sourceWallet)?.address || '') || 0).toFixed(4)} SOL
                           </span>
-                          <span className="text-sm text-[#02b36d] font-mono">
+                          <span className="text-sm text-[#FFD700] font-mono">
                             {(tokenBalances.get(wallets.find(w => w.privateKey === sourceWallet)?.address || '') || 0).toFixed(4)} {tokenAddress.slice(0, 4)}
                           </span>
                         </div>
@@ -844,14 +844,14 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                     <div className="space-y-2 relative">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1">
-                          <label className="text-sm font-medium text-[#e4fbf2] font-mono">
+                          <label className="text-sm font-medium text-[#FFE4B5] font-mono">
                             BURN_AMOUNT
                           </label>
                           <div className="relative" onMouseEnter={() => setShowInfoTip(true)} onMouseLeave={() => setShowInfoTip(false)}>
-                            <Info size={14} className="text-[#7ddfbd] cursor-help" />
+                            <Info size={14} className="text-[#FFE4B5] cursor-help" />
                             {showInfoTip && (
-                              <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#02b36d30] rounded-lg shadow-lg text-xs text-[#e4fbf2] w-48 z-10 font-mono modal-glow">
-                                <span className="text-[#02b36d]">!</span> This amount will be permanently destroyed
+                              <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#FFD70030] rounded-lg shadow-lg text-xs text-[#FFE4B5] w-48 z-10 font-mono modal-glow">
+                                <span className="text-[#FFD700]">!</span> This amount will be permanently destroyed
                               </div>
                             )}
                           </div>
@@ -860,7 +860,7 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                           <button
                             type="button"
                             onClick={() => setAmount(getSelectedTokenBalance().toString())}
-                            className="text-xs px-2 py-0.5 bg-[#02b36d10] hover:bg-[#02b36d20] border border-[#02b36d30] text-[#02b36d] rounded-lg transition-all modal-btn-cyberpunk font-mono"
+                            className="text-xs px-2 py-0.5 bg-[#FFD70010] hover:bg-[#FFD70020] border border-[#FFD70030] text-[#FFD700] rounded-lg transition-all modal-btn-cyberpunk font-mono"
                           >
                             MAX
                           </button>
@@ -868,10 +868,10 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                       </div>
                       <div className="relative">
                         {/* Decorative elements for cyberpunk input */}
-                        <div className="absolute -top-px left-4 right-4 h-px bg-[#02b36d50]"></div>
-                        <div className="absolute -bottom-px left-4 right-4 h-px bg-[#02b36d50]"></div>
-                        <div className="absolute top-3 -left-px bottom-3 w-px bg-[#02b36d50]"></div>
-                        <div className="absolute top-3 -right-px bottom-3 w-px bg-[#02b36d50]"></div>
+                        <div className="absolute -top-px left-4 right-4 h-px bg-[#FFD70050]"></div>
+                        <div className="absolute -bottom-px left-4 right-4 h-px bg-[#FFD70050]"></div>
+                        <div className="absolute top-3 -left-px bottom-3 w-px bg-[#FFD70050]"></div>
+                        <div className="absolute top-3 -right-px bottom-3 w-px bg-[#FFD70050]"></div>
                         
                         <input
                           type="text"
@@ -883,9 +883,9 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                             }
                           }}
                           placeholder="ENTER_AMOUNT_TO_BURN"
-                          className="w-full pl-4 pr-16 py-3 bg-[#050a0e] border border-[#02b36d30] rounded-lg text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono tracking-wider"
+                          className="w-full pl-4 pr-16 py-3 bg-[#050a0e] border border-[#FFD70030] rounded-lg text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono tracking-wider"
                         />
-                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-[#02b36d] font-mono">
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-[#FFD700] font-mono">
                           {getSelectedTokenSymbol()}
                         </div>
                       </div>
@@ -895,29 +895,29 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                     {amount && parseFloat(amount) > 0 && (
                       <div className="relative mt-6 rounded-lg overflow-hidden">
                         {/* Cyberpunk burn effect background */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#02b36d05] to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-[#FFD70005] to-transparent"></div>
                         <div className="absolute inset-0 modal-cyberpunk-content::before pointer-events-none opacity-30"></div>
                         
-                        <div className="relative p-4 border border-[#02b36d30] rounded-lg">
-                          <div className="absolute top-0 right-0 p-1 bg-[#050a0e] border-l border-b border-[#02b36d30] text-[#02b36d] text-xs font-mono">
+                        <div className="relative p-4 border border-[#FFD70030] rounded-lg">
+                          <div className="absolute top-0 right-0 p-1 bg-[#050a0e] border-l border-b border-[#FFD70030] text-[#FFD700] text-xs font-mono">
                             BURN_PREVIEW
                           </div>
                           
                           <div className="flex justify-between items-center mt-4">
-                            <span className="text-sm text-[#7ddfbd] font-mono">BURN_AMOUNT</span>
-                            <span className="text-sm font-semibold text-[#02b36d] font-mono glitch-text">
+                            <span className="text-sm text-[#FFE4B5] font-mono">BURN_AMOUNT</span>
+                            <span className="text-sm font-semibold text-[#FFD700] font-mono glitch-text">
                               {amount} {getSelectedTokenSymbol()}
                             </span>
                           </div>
                           
                           <div className="flex justify-between items-center mt-2">
-                            <span className="text-sm text-[#7ddfbd] font-mono">CURRENT_BALANCE</span>
-                            <span className="text-sm text-[#e4fbf2] font-mono">{getSelectedTokenBalance()} {getSelectedTokenSymbol()}</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">CURRENT_BALANCE</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">{getSelectedTokenBalance()} {getSelectedTokenSymbol()}</span>
                           </div>
                           
                           <div className="flex justify-between items-center mt-2">
-                            <span className="text-sm text-[#7ddfbd] font-mono">BALANCE_AFTER_BURN</span>
-                            <span className="text-sm text-[#e4fbf2] font-mono">
+                            <span className="text-sm text-[#FFE4B5] font-mono">BALANCE_AFTER_BURN</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">
                               {Math.max(0, getSelectedTokenBalance() - parseFloat(amount)).toFixed(4)} {getSelectedTokenSymbol()}
                             </span>
                           </div>
@@ -925,13 +925,13 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                           {/* Visual representation of burning */}
                           <div className="mt-4 h-2 bg-[#091217] rounded-lg overflow-hidden">
                             <div 
-                              className="h-full bg-[#02b36d] transition-all duration-500"
+                              className="h-full bg-[#FFD700] transition-all duration-500"
                               style={{ 
                                 width: `${Math.min(100, (parseFloat(amount) / getSelectedTokenBalance()) * 100)}%` 
                               }}
                             ></div>
                           </div>
-                          <div className="mt-1 flex justify-between text-xs text-[#7ddfbd] font-mono">
+                          <div className="mt-1 flex justify-between text-xs text-[#FFE4B5] font-mono">
                             <span>0</span>
                             <span>{getSelectedTokenBalance()}</span>
                           </div>
@@ -947,65 +947,65 @@ export const BurnModal: React.FC<BurnModalProps> = ({
             {currentStep === 2 && (
               <div className={`space-y-6 ${modalClass || 'animate-content-fade'}`}>
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="text-[#02b36d] border border-[#02b36d30] p-1 rounded">
+                  <div className="text-[#FFD700] border border-[#FFD70030] p-1 rounded">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium text-[#e4fbf2] font-mono">
-                    <span className="text-[#02b36d]">/</span> REVIEW BURN <span className="text-[#02b36d]">/</span>
+                  <h3 className="text-lg font-medium text-[#FFE4B5] font-mono">
+                    <span className="text-[#FFD700]">/</span> REVIEW BURN <span className="text-[#FFD700]">/</span>
                   </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Left Column - Summary */}
                   <div className="space-y-4">
-                    <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4">
-                      <h4 className="text-base font-semibold text-[#e4fbf2] font-mono mb-3">
-                        <span className="text-[#02b36d]">&gt;</span> BURN_SUMMARY
+                    <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4">
+                      <h4 className="text-base font-semibold text-[#FFE4B5] font-mono mb-3">
+                        <span className="text-[#FFD700]">&gt;</span> BURN_SUMMARY
                       </h4>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-[#7ddfbd] font-mono">TOKEN</span>
+                          <span className="text-sm text-[#FFE4B5] font-mono">TOKEN</span>
                           <div className="flex items-center">
-                            <div className="w-5 h-5 rounded-full bg-[#02b36d20] border border-[#02b36d30] flex items-center justify-center mr-2">
-                              <span className="text-xs text-[#02b36d] font-mono">
+                            <div className="w-5 h-5 rounded-full bg-[#FFD70020] border border-[#FFD70030] flex items-center justify-center mr-2">
+                              <span className="text-xs text-[#FFD700] font-mono">
                                 {getSelectedTokenSymbol()[0] || 'T'}
                               </span>
                             </div>
-                            <span className="text-sm text-[#e4fbf2] font-mono">{getSelectedTokenSymbol()}</span>
+                            <span className="text-sm text-[#FFE4B5] font-mono">{getSelectedTokenSymbol()}</span>
                           </div>
                         </div>
                         
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-[#7ddfbd] font-mono">TOKEN_ADDR</span>
-                          <span className="text-sm font-mono text-[#e4fbf2] glitch-text">
+                          <span className="text-sm text-[#FFE4B5] font-mono">TOKEN_ADDR</span>
+                          <span className="text-sm font-mono text-[#FFE4B5] glitch-text">
                             {tokenAddress.slice(0, 6)}...{tokenAddress.slice(-4)}
                           </span>
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-[#7ddfbd] font-mono">SOURCE</span>
-                          <span className="text-sm font-mono text-[#e4fbf2] glitch-text">
+                          <span className="text-sm text-[#FFE4B5] font-mono">SOURCE</span>
+                          <span className="text-sm font-mono text-[#FFE4B5] glitch-text">
                             {formatAddress(wallets.find(w => w.privateKey === sourceWallet)?.address || '')}
                           </span>
                         </div>
                         
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-[#7ddfbd] font-mono">BALANCE</span>
-                          <span className="text-sm text-[#e4fbf2] font-mono">{getSelectedTokenBalance()} {getSelectedTokenSymbol()}</span>
+                          <span className="text-sm text-[#FFE4B5] font-mono">BALANCE</span>
+                          <span className="text-sm text-[#FFE4B5] font-mono">{getSelectedTokenBalance()} {getSelectedTokenSymbol()}</span>
                         </div>
                         
-                        <div className="pt-2 border-t border-[#02b36d30] flex items-center justify-between">
-                          <span className="text-sm font-medium text-[#e4fbf2] font-mono">BURN_AMOUNT</span>
-                          <span className="text-sm font-semibold text-[#02b36d] font-mono glitch-text">
+                        <div className="pt-2 border-t border-[#FFD70030] flex items-center justify-between">
+                          <span className="text-sm font-medium text-[#FFE4B5] font-mono">BURN_AMOUNT</span>
+                          <span className="text-sm font-semibold text-[#FFD700] font-mono glitch-text">
                             {amount} {getSelectedTokenSymbol()}
                           </span>
                         </div>
                         
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-[#7ddfbd] font-mono">NEW_BALANCE</span>
-                          <span className="text-sm text-[#e4fbf2] font-mono">
+                          <span className="text-sm text-[#FFE4B5] font-mono">NEW_BALANCE</span>
+                          <span className="text-sm text-[#FFE4B5] font-mono">
                             {Math.max(0, getSelectedTokenBalance() - parseFloat(amount)).toFixed(4)} {getSelectedTokenSymbol()}
                           </span>
                         </div>
@@ -1013,11 +1013,11 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                     </div>
                     
                     {/* Warning Box */}
-                    <div className="relative bg-[#02b36d05] border border-[#02b36d20] rounded-lg p-3 overflow-hidden">
+                    <div className="relative bg-[#FFD70005] border border-[#FFD70020] rounded-lg p-3 overflow-hidden">
                       {/* Scanline effect */}
                       <div className="absolute inset-0 modal-cyberpunk-content::before pointer-events-none opacity-20"></div>
                       
-                      <div className="flex items-start text-[#02b36d] text-sm">
+                      <div className="flex items-start text-[#FFD700] text-sm">
                         <svg className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
@@ -1029,20 +1029,20 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                   </div>
                   
                   {/* Right Column - Burn Effect Visualization */}
-                  <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4 relative overflow-hidden">
+                  <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4 relative overflow-hidden">
                     {/* Futuristic decorations */}
-                    <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-[#02b36d20]"></div>
-                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-[#02b36d20]"></div>
+                    <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-[#FFD70020]"></div>
+                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-[#FFD70020]"></div>
                     
-                    <h4 className="text-base font-semibold text-[#e4fbf2] font-mono mb-6 relative z-10">
-                      <span className="text-[#02b36d]">&gt;</span> BURN_EFFECT
+                    <h4 className="text-base font-semibold text-[#FFE4B5] font-mono mb-6 relative z-10">
+                      <span className="text-[#FFD700]">&gt;</span> BURN_EFFECT
                     </h4>
                     
                     <div className="flex flex-col items-center justify-center h-44 space-y-6 relative z-10">
                       <div className="flex items-center justify-center w-full">
                         <div className="flex flex-col items-center">
-                          <span className="text-sm text-[#7ddfbd] mb-1 font-mono">CURRENT</span>
-                          <div className="text-lg font-semibold text-[#e4fbf2] font-mono">
+                          <span className="text-sm text-[#FFE4B5] mb-1 font-mono">CURRENT</span>
+                          <div className="text-lg font-semibold text-[#FFE4B5] font-mono">
                             {getSelectedTokenBalance()} {getSelectedTokenSymbol()}
                           </div>
                         </div>
@@ -1050,16 +1050,16 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                       
                       {/* Animated burn arrow */}
                       <div className="relative">
-                        <ArrowDown size={24} className="text-[#02b36d]" />
-                        <div className="absolute inset-0 animate-pulse-slow text-[#02b36d]">
+                        <ArrowDown size={24} className="text-[#FFD700]" />
+                        <div className="absolute inset-0 animate-pulse-slow text-[#FFD700]">
                           <ArrowDown size={24} className="opacity-50" />
                         </div>
                       </div>
                       
                       <div className="flex items-center justify-center w-full">
                         <div className="flex flex-col items-center">
-                          <span className="text-sm text-[#7ddfbd] mb-1 font-mono">AFTER_BURN</span>
-                          <div className="text-lg font-semibold text-[#02b36d] font-mono glitch-text">
+                          <span className="text-sm text-[#FFE4B5] mb-1 font-mono">AFTER_BURN</span>
+                          <div className="text-lg font-semibold text-[#FFD700] font-mono glitch-text">
                             {Math.max(0, getSelectedTokenBalance() - parseFloat(amount)).toFixed(4)} {getSelectedTokenSymbol()}
                           </div>
                         </div>
@@ -1067,12 +1067,12 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                     </div>
                     
                     {/* Destructive animation effect */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#02b36d10] to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#FFD70010] to-transparent"></div>
                   </div>
                 </div>
 
                 {/* Confirmation Checkbox with cyberpunk style */}
-                <div className="bg-[#091217] rounded-lg border border-[#02b36d30] p-4 mt-4">
+                <div className="bg-[#091217] rounded-lg border border-[#FFD70030] p-4 mt-4">
                   <div className="flex items-start gap-3">
                     <div className="relative mt-1">
                       <input
@@ -1082,14 +1082,14 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                         onChange={(e) => setIsConfirmed(e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-5 h-5 border border-[#02b36d40] rounded peer-checked:bg-[#02b36d] peer-checked:border-0 transition-all cursor-pointer"></div>
+                      <div className="w-5 h-5 border border-[#FFD70040] rounded peer-checked:bg-[#FFD700] peer-checked:border-0 transition-all cursor-pointer"></div>
                       <CheckCircle 
                         size={14} 
                         className={`absolute top-0.5 left-0.5 text-[#050a0e] transition-all ${isConfirmed ? 'opacity-100' : 'opacity-0'}`}
                       />
                     </div>
-                    <label htmlFor="confirm" className="text-sm text-[#e4fbf2] leading-relaxed cursor-pointer font-mono">
-                      I confirm that I want to burn <span className="text-[#02b36d] font-medium">
+                    <label htmlFor="confirm" className="text-sm text-[#FFE4B5] leading-relaxed cursor-pointer font-mono">
+                      I confirm that I want to burn <span className="text-[#FFD700] font-medium">
                         {amount} {getSelectedTokenSymbol()}
                       </span>. I understand this action cannot be undone and the tokens will be permanently removed from circulation.
                     </label>
@@ -1105,12 +1105,12 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                 type="button"
                 onClick={currentStep === 0 ? onClose : handleBack}
                 disabled={isSubmitting}
-                className={`px-4 py-2 bg-[#091217] border border-[#02b36d30] hover:border-[#02b36d] rounded-lg transition-all modal-btn-cyberpunk flex items-center ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`px-4 py-2 bg-[#091217] border border-[#FFD70030] hover:border-[#FFD700] rounded-lg transition-all modal-btn-cyberpunk flex items-center ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {currentStep === 0 ? (
-                  <span className="font-mono text-[#e4fbf2]">CANCEL</span>
+                  <span className="font-mono text-[#FFE4B5]">CANCEL</span>
                 ) : (
-                  <div className="flex items-center font-mono text-[#e4fbf2]">
+                  <div className="flex items-center font-mono text-[#FFE4B5]">
                     <ChevronLeft size={16} className="mr-1" />
                     BACK
                   </div>
@@ -1134,8 +1134,8 @@ export const BurnModal: React.FC<BurnModalProps> = ({
                             (currentStep === 0 && !sourceWallet) ||
                             (currentStep === 1 && (!amount || parseFloat(amount) <= 0)) ||
                             (currentStep === STEPS_BURN.length - 1 && !isConfirmed))
-                              ? 'bg-[#02b36d50] text-[#050a0e80] cursor-not-allowed opacity-50' 
-                              : 'bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                              ? 'bg-[#FFD70050] text-[#050a0e80] cursor-not-allowed opacity-50' 
+                              : 'bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
               >
                 {/* Button Content */}
                 {currentStep === STEPS_BURN.length - 1 ? (
@@ -1159,10 +1159,10 @@ export const BurnModal: React.FC<BurnModalProps> = ({
         </div>
         
         {/* Cyberpunk decorative corner elements */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
       </div>
     </div>,
     document.body

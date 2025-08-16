@@ -22,13 +22,13 @@ declare global {
 const SERVER_URL_COOKIE = 'trading_server_url';
 const INTRO_COMPLETED_COOKIE = 'intro_completed';
 const DEFAULT_LOCAL_URLS = [
-  'https://solana.raze.bot/'
+  'https://caesarbot.com/'
 ];
 
 const ServerCheckLoading = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-neutral-900">
-      <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-t-2 border-green-500"></div>
+      <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-t-2 border-yellow-500"></div>
     </div>
   );
 };

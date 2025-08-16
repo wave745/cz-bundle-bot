@@ -35,7 +35,7 @@ export const Tooltip = ({
       </div>
       {isVisible && (
         <div className={`absolute z-50 ${positionClasses[position]}`}>
-          <div className="bg-[#051014] cyberpunk-border text-[#02b36d] text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
+          <div className="bg-[#051014] cyberpunk-border text-[#FFD700] text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
             {content}
           </div>
         </div>
@@ -467,9 +467,9 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
       <div className="absolute top-0 left-0 w-full h-full cyberpunk-scanline pointer-events-none z-1 opacity-30"></div>
       
       {/* Enhanced header */}
-      <div className="top-0 sticky bg-[#050a0e99] backdrop-blur-sm border-b border-[#02b36d40] z-10 shadow-sm">
+      <div className="top-0 sticky bg-[#050a0e99] backdrop-blur-sm border-b border-[#FFD70040] z-10 shadow-sm">
         {/* Compact buttons row */}
-        <div className="px-2 py-1 border-b border-[#02b36d20]">
+        <div className="px-2 py-1 border-b border-[#FFD70020]">
           <WalletOperationsButtons
             wallets={wallets}
             solBalances={solBalances}
@@ -500,22 +500,22 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
         <div className="py-2 px-3 bg-[#0a141980]">
           <div className="flex justify-between text-sm">
             <div>
-              <div className="text-[#7ddfbd] font-mono flex items-center gap-2">
-                <DollarSign size={14} className="text-[#02b36d]" />
+              <div className="text-[#FFE4B5] font-mono flex items-center gap-2">
+                <DollarSign size={14} className="text-[#FFD700]" />
                 <span>
-                  <span className="text-[#e4fbf2]">{totalSol.toFixed(2)}</span> (
-                  <span className="text-[#02b36d]">{activeSol.toFixed(2)}</span>) SOL
+                  <span className="text-[#FFE4B5]">{totalSol.toFixed(2)}</span> (
+                  <span className="text-[#FFD700]">{activeSol.toFixed(2)}</span>) SOL
                 </span>
               </div>
             </div>
             {tokenAddress && (
               <div className="text-right">
-                <div className="text-[#7ddfbd] font-mono flex items-center justify-end gap-2">
+                <div className="text-[#FFE4B5] font-mono flex items-center justify-end gap-2">
                   <span>
-                    <span className="text-[#e4fbf2]">{formatTokenBalance(totalTokens)}</span> (
-                    <span className="text-[#02b36d]">{formatTokenBalance(activeTokens)}</span>) Tokens
+                    <span className="text-[#FFE4B5]">{formatTokenBalance(totalTokens)}</span> (
+                    <span className="text-[#FFD700]">{formatTokenBalance(activeTokens)}</span>) Tokens
                   </span>
-                  <Activity size={14} className="text-[#02b36d]" />
+                  <Activity size={14} className="text-[#FFD700]" />
                 </div>
               </div>
             )}
@@ -539,11 +539,11 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                   onMouseEnter={() => setHoverRow(wallet.id)}
                   onMouseLeave={() => setHoverRow(null)}
                   className={`
-                    border-b border-[#02b36d15] cursor-pointer transition-all duration-500
-                    ${hoverRow === wallet.id ? 'bg-[#02b36d15]' : ''}
-                    ${wallet.isActive ? 'bg-[#02b36d10]' : ''}
-                    ${refreshingWalletId === wallet.id ? 'bg-[#02b36d20]' : ''}
-                    ${recentlyUpdatedWallets.has(wallet.address) ? 'bg-gradient-to-r from-[#02b36d30] to-[#02b36d15] animate-pulse border-l-2 border-l-[#02b36d]' : ''}
+                    border-b border-[#FFD70015] cursor-pointer transition-all duration-500
+                    ${hoverRow === wallet.id ? 'bg-[#FFD70015]' : ''}
+                    ${wallet.isActive ? 'bg-[#FFD70010]' : ''}
+                    ${refreshingWalletId === wallet.id ? 'bg-[#FFD70020]' : ''}
+                    ${recentlyUpdatedWallets.has(wallet.address) ? 'bg-gradient-to-r from-[#FFD70030] to-[#FFD70015] animate-pulse border-l-2 border-l-[#FFD700]' : ''}
                   `}
                 >
                   {/* Quick Buy Button or Indicator */}
@@ -563,20 +563,20 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                           className={`
                             w-6 h-6 rounded-full transition-all duration-200 flex items-center justify-center
                             ${!tokenAddress || (solBalances.get(wallet.address) || 0) < 0.01
-                              ? 'bg-[#091217] border border-[#02b36d20] cursor-not-allowed'
+                              ? 'bg-[#091217] border border-[#FFD70020] cursor-not-allowed'
                               : buyingWalletId === wallet.id
-                              ? 'bg-[#02b36d40] border border-[#02b36d]'
-                              : 'bg-[#02b36d20] border border-[#02b36d60] hover:bg-[#02b36d30] hover:border-[#02b36d] cursor-pointer'
+                              ? 'bg-[#FFD70040] border border-[#FFD700]'
+                              : 'bg-[#FFD70020] border border-[#FFD70060] hover:bg-[#FFD70030] hover:border-[#FFD700] cursor-pointer'
                             }
                           `}
                         >
                           {buyingWalletId === wallet.id ? (
-                            <RefreshCw size={10} className="text-[#02b36d] animate-spin" />
+                            <RefreshCw size={10} className="text-[#FFD700] animate-spin" />
                           ) : (
                             <Zap size={10} className={`
                               ${!tokenAddress || (solBalances.get(wallet.address) || 0) < quickBuyAmount
-                                ? 'text-[#02b36d40]'
-                                : 'text-[#02b36d]'
+                                ? 'text-[#FFD70040]'
+                                : 'text-[#FFD700]'
                               }
                             `} />
                           )}
@@ -586,7 +586,7 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                       <div className="w-6 h-6 flex items-center justify-center">
                         <div className={`
                           w-2 h-2 rounded-full transition-all duration-200
-                          ${wallet.isActive ? 'bg-[#02b36d]' : 'bg-[#02b36d40]'}
+                          ${wallet.isActive ? 'bg-[#FFD700]' : 'bg-[#FFD70040]'}
                         `} />
                       </div>
                     )}
@@ -596,15 +596,15 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                   <td className="py-2.5 px-2 font-mono">
                     <div className="flex items-center">
                       {refreshingWalletId === wallet.id && (
-                        <RefreshCw size={12} className="text-[#02b36d] mr-2 animate-spin" />
+                        <RefreshCw size={12} className="text-[#FFD700] mr-2 animate-spin" />
                       )}
                       <Tooltip 
                         content={wallet.label ? `${wallet.label} (${formatAddress(wallet.address)})` : `Click to copy: ${wallet.address}`}
                         position="top"
                       >
                         <span 
-                          className={`text-sm font-mono cursor-pointer hover:text-[#02b36d] transition-colors duration-200 tracking-wide ${
-                            wallet.isActive ? 'text-[#00ff88]' : 'text-[#e4fbf2]'
+                          className={`text-sm font-mono cursor-pointer hover:text-[#FFD700] transition-colors duration-200 tracking-wide ${
+                            wallet.isActive ? 'text-[#00ff88]' : 'text-[#FFE4B5]'
                           }`}
                           onClick={async (e) => {
                             e.stopPropagation();
@@ -617,7 +617,7 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                         >
                           {getWalletDisplayName(wallet)}
                           {copiedAddress === wallet.address && (
-                            <span className="ml-1 text-xs text-[#02b36d] animate-pulse">
+                            <span className="ml-1 text-xs text-[#FFD700] animate-pulse">
                               ✓
                             </span>
                           )}
@@ -627,9 +627,9 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                   </td>
                   
                   {/* SOL balance */}
-                  <td className="py-2.5 px-2 text-right font-mono text-[#e4fbf2]">
+                  <td className="py-2.5 px-2 text-right font-mono text-[#FFE4B5]">
                     <div className="flex items-center justify-end gap-1">
-                      <span className={`${(solBalances.get(wallet.address) || 0) > 0 ? 'text-[#7ddfbd]' : 'text-[#7ddfbd60]'}`}>
+                      <span className={`${(solBalances.get(wallet.address) || 0) > 0 ? 'text-[#FFE4B5]' : 'text-[#FFE4B560]'}`}>
                         {(solBalances.get(wallet.address) || 0).toFixed(3)}
                       </span>
                     </div>
@@ -639,7 +639,7 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                   {tokenAddress && (
                     <td className="py-2.5 px-2 text-right font-mono">
                       <div className="flex items-center justify-end gap-1">
-                        <span className={`${(tokenBalances.get(wallet.address) || 0) > 0 ? 'text-[#02b36d]' : 'text-[#02b36d40]'}`}>
+                        <span className={`${(tokenBalances.get(wallet.address) || 0) > 0 ? 'text-[#FFD700]' : 'text-[#FFD70040]'}`}>
                           {formatTokenBalance(tokenBalances.get(wallet.address) || 0)}
                         </span>
                       </div>
@@ -653,7 +653,7 @@ export const WalletsPage: React.FC<WalletsPageProps> = ({
                         e.stopPropagation();
                         window.open(`https://solscan.io/account/${wallet.address}`, '_blank');
                       }}
-                      className="text-[#7ddfbd60] hover:text-[#02b36d] transition-colors duration-200"
+                      className="text-[#FFE4B560] hover:text-[#FFD700] transition-colors duration-200"
                     >
                       <ExternalLink size={14} />
                     </button>

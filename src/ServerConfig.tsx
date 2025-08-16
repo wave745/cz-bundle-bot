@@ -50,7 +50,7 @@ const ServerConfig: React.FC<ServerConfigProps> = ({ onSubmit }) => {
   return (
     <div className="fixed inset-0 bg-neutral-900/95 flex items-center justify-center p-4">
       <div className="bg-neutral-800 rounded-lg max-w-md w-full p-6 shadow-xl">
-        <h2 className="text-xl font-semibold text-green-500 mb-4">Server Configuration</h2>
+        <h2 className="text-xl font-semibold text-yellow-500 mb-4">Server Configuration</h2>
         
         <div className="mb-6 space-y-2">
           <p className="text-neutral-300">
@@ -71,7 +71,7 @@ const ServerConfig: React.FC<ServerConfigProps> = ({ onSubmit }) => {
               className={`w-full bg-neutral-700 border ${
                 error ? 'border-red-500' : 'border-neutral-600'
               } rounded px-3 py-2 text-neutral-200 placeholder-neutral-500 
-                focus:outline-none focus:border-green-500`}
+                focus:outline-none focus:border-yellow-500`}
             />
             {error && (
               <div className="flex items-center gap-2 mt-2 text-red-500 text-sm">
@@ -82,7 +82,7 @@ const ServerConfig: React.FC<ServerConfigProps> = ({ onSubmit }) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-green-500 hover:bg-green-600 text-black font-medium 
+            className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-medium 
                      py-2 px-4 rounded transition-colors"
           >
             Connect to Server

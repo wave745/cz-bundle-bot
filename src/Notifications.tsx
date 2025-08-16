@@ -96,14 +96,14 @@ const cyberpunkAnimations = `
 
 // CSS classes for cyberpunk styling
 const cyberpunkClasses = {
-  successToast: "relative bg-[#050a0e] border border-[#02b36d] text-[#e4fbf2] animate-[cyberpunk-glow_2s_infinite]",
-  errorToast: "relative bg-[#050a0e] border border-[#ff305c] text-[#e4fbf2] animate-[cyberpunk-error-glow_2s_infinite]",
+  successToast: "relative bg-[#050a0e] border border-[#FFD700] text-[#FFE4B5] animate-[cyberpunk-glow_2s_infinite]",
+  errorToast: "relative bg-[#050a0e] border border-[#ff305c] text-[#FFE4B5] animate-[cyberpunk-error-glow_2s_infinite]",
   scanline: "absolute inset-0 pointer-events-none bg-[linear-gradient(to_bottom,rgba(2,179,109,0)_50%,rgba(2,179,109,0.1)_50%)] bg-[size:100%_4px] animate-[cyberpunk-scanline_4s_linear_infinite] opacity-40",
   errorScanline: "absolute inset-0 pointer-events-none bg-[linear-gradient(to_bottom,rgba(255,48,92,0)_50%,rgba(255,48,92,0.1)_50%)] bg-[size:100%_4px] animate-[cyberpunk-scanline_4s_linear_infinite] opacity-40",
-  icon: "h-5 w-5 text-[#02b36d]",
+  icon: "h-5 w-5 text-[#FFD700]",
   errorIcon: "h-5 w-5 text-[#ff305c]",
   message: "font-mono tracking-wider animate-[cyberpunk-text-glitch_3s_infinite]",
-  closeButton: "ml-2 rounded-full p-1 hover:bg-[#02b36d40] text-[#7ddfbd] transition-colors duration-300",
+  closeButton: "ml-2 rounded-full p-1 hover:bg-[#FFD70040] text-[#FFE4B5] transition-colors duration-300",
   errorCloseButton: "ml-2 rounded-full p-1 hover:bg-[#ff305c40] text-[#ff8fa7] transition-colors duration-300"
 }
 
@@ -153,10 +153,10 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
             <div className={toast.type === 'success' ? cyberpunkClasses.scanline : cyberpunkClasses.errorScanline}></div>
             
             {/* Corner accents for cyberpunk border effect */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#02b36d]"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#02b36d]"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#02b36d]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#02b36d]"></div>
+            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#FFD700]"></div>
+            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#FFD700]"></div>
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FFD700]"></div>
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#FFD700]"></div>
             
             {/* Icon and content */}
             {toast.type === 'success' ? (

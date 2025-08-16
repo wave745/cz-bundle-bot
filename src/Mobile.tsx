@@ -90,10 +90,10 @@ const MobileLayout: React.FC<MobileLayoutProps> = () => {
         <div className="text-center max-w-md mx-auto">
           {/* Warning icon with glow effect */}
           <div className="mb-8 flex justify-center">
-            <div className="relative desktop-only-pulse rounded-full p-4 border border-[#02b36d40] bg-[#050a0e]">
+            <div className="relative desktop-only-pulse rounded-full p-4 border border-[#FFD70040] bg-[#050a0e]">
               <Monitor 
                 size={48} 
-                className="text-[#02b36d] desktop-only-glow" 
+                className="text-[#FFD700] desktop-only-glow" 
               />
               <AlertTriangle 
                 size={20} 
@@ -103,17 +103,17 @@ const MobileLayout: React.FC<MobileLayoutProps> = () => {
           </div>
           
           {/* Main message */}
-          <h1 className="text-2xl font-bold text-[#02b36d] mb-4 font-mono tracking-wider desktop-only-glow">
+          <h1 className="text-2xl font-bold text-[#FFD700] mb-4 font-mono tracking-wider desktop-only-glow">
             DESKTOP REQUIRED
           </h1>
           
           {/* Subtitle */}
-          <p className="text-[#7ddfbd] text-lg mb-6 font-mono leading-relaxed">
+          <p className="text-[#FFE4B5] text-lg mb-6 font-mono leading-relaxed">
             You must use app from a desktop for an enhanced experience
           </p>
           
           {/* Additional info */}
-          <div className="text-[#7ddfbd80] text-sm font-mono space-y-2">
+          <div className="text-[#FFE4B580] text-sm font-mono space-y-2">
             <p>• Advanced trading features</p>
             <p>• Multi-wallet management</p>
             <p>• Real-time analytics</p>
@@ -122,21 +122,21 @@ const MobileLayout: React.FC<MobileLayoutProps> = () => {
           
           {/* Decorative elements */}
           <div className="mt-8 flex justify-center space-x-4">
-            <div className="w-2 h-2 rounded-full bg-[#02b36d] desktop-only-pulse"></div>
-            <div className="w-2 h-2 rounded-full bg-[#02b36d] desktop-only-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-[#02b36d] desktop-only-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-[#FFD700] desktop-only-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-[#FFD700] desktop-only-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-[#FFD700] desktop-only-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>
       
       {/* Bottom border with glow */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#02b36d] to-transparent opacity-60"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-60"></div>
       
       {/* Corner decorations */}
-      <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-      <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-      <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-      <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+      <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+      <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+      <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+      <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
     </div>
   );
 };

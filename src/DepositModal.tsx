@@ -319,7 +319,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
     }
     
     .glitch-text:hover {
-      text-shadow: 0 0 2px #02b36d, 0 0 4px #02b36d;
+      text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700;
       animation: glitch 2s infinite;
     }
     
@@ -334,7 +334,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm modal-cyberpunk-container" style={{backgroundColor: 'rgba(5, 10, 14, 0.85)'}}>
-      <div className="relative bg-[#050a0e] border border-[#02b36d40] rounded-lg shadow-lg w-full max-w-md overflow-hidden transform modal-cyberpunk-content modal-glow">
+      <div className="relative bg-[#050a0e] border border-[#FFD70040] rounded-lg shadow-lg w-full max-w-md overflow-hidden transform modal-cyberpunk-content modal-glow">
         {/* Ambient grid background */}
         <div className="absolute inset-0 z-0 opacity-10"
              style={{
@@ -345,18 +345,18 @@ export const DepositModal: React.FC<DepositModalProps> = ({
         </div>
 
         {/* Header */}
-        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#02b36d40]">
+        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#FFD70040]">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#02b36d20] mr-3">
-              <DollarSign size={16} className="text-[#02b36d]" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#FFD70020] mr-3">
+              <DollarSign size={16} className="text-[#FFD700]" />
             </div>
-            <h2 className="text-lg font-semibold text-[#e4fbf2] font-mono">
-              <span className="text-[#02b36d]">/</span> DEPOSIT SOL <span className="text-[#02b36d]">/</span>
+            <h2 className="text-lg font-semibold text-[#FFE4B5] font-mono">
+              <span className="text-[#FFD700]">/</span> DEPOSIT SOL <span className="text-[#FFD700]">/</span>
             </h2>
           </div>
           <button 
             onClick={onClose}
-            className="text-[#7ddfbd] hover:text-[#02b36d] transition-colors p-1 hover:bg-[#02b36d20] rounded"
+            className="text-[#FFE4B5] hover:text-[#FFD700] transition-colors p-1 hover:bg-[#FFD70020] rounded"
           >
             <X size={18} />
           </button>
@@ -365,7 +365,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
         {/* Progress Indicator */}
         <div className="relative w-full h-1 bg-[#091217] progress-bar-cyberpunk">
           <div 
-            className="h-full bg-[#02b36d] transition-all duration-300"
+            className="h-full bg-[#FFD700] transition-all duration-300"
             style={{ width: currentStep === 0 ? '50%' : '100%' }}
           ></div>
         </div>
@@ -377,24 +377,24 @@ export const DepositModal: React.FC<DepositModalProps> = ({
               <div>
                 <button
                   onClick={connectPhantomWallet}
-                  className="w-full px-4 py-3 bg-[#091217] border border-[#02b36d40] hover:border-[#02b36d] text-[#e4fbf2] rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-[#02b36d40] transform hover:-translate-y-0.5 modal-btn-cyberpunk"
+                  className="w-full px-4 py-3 bg-[#091217] border border-[#FFD70040] hover:border-[#FFD700] text-[#FFE4B5] rounded-lg flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-[#FFD70040] transform hover:-translate-y-0.5 modal-btn-cyberpunk"
                 >
                   <svg width="22" height="22" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="128" height="128" rx="64" fill="#050a0e"/>
-                    <path d="M110.584 64.9142H99.142C99.142 41.8335 80.2231 23 57.142 23C36.3226 23 18.7929 38.8944 15.6294 59.0563C15.2463 61.2766 15.0547 63.5605 15.0547 65.8019C15.0547 67.693 17.0548 69.142 18.9496 69.142H41.0038C42.2774 69.142 43.3791 68.2511 43.6484 67.002C43.8341 66.1368 44.0274 65.2393 44.3292 64.3971C46.5275 57.427 52.3790 52.4294 59.2648 52.4294C67.7598 52.4294 74.6521 59.3214 74.6521 67.8164C74.6521 76.3113 67.7598 83.2037 59.2648 83.2037C55.9574 83.2037 52.8709 82.0949 50.3999 80.1855C49.431 79.4954 48.1363 79.5393 47.2752 80.3996L32.0447 95.6302C30.8197 96.8548 31.5636 99 33.2599 99C34.9026 99 36.5454 98.8781 38.142 98.6553C44.9556 97.6553 51.2356 94.8281 56.3762 90.642C58.6555 88.7861 61.0457 86.7567 63.7865 85.0392C63.9501 84.9312 64.114 84.8231 64.3322 84.7151C76.4899 79.4954 85.7462 68.6714 87.4429 55.4348C87.6739 53.7519 87.7891 52.0158 87.7891 50.2259C87.7891 48.9332 88.5024 47.7629 89.6275 47.2292L106.396 39.3163C108.364 38.4161 110.584 39.8481 110.584 41.9863V64.9142Z" fill="#02b36d"/>
+                    <path d="M110.584 64.9142H99.142C99.142 41.8335 80.2231 23 57.142 23C36.3226 23 18.7929 38.8944 15.6294 59.0563C15.2463 61.2766 15.0547 63.5605 15.0547 65.8019C15.0547 67.693 17.0548 69.142 18.9496 69.142H41.0038C42.2774 69.142 43.3791 68.2511 43.6484 67.002C43.8341 66.1368 44.0274 65.2393 44.3292 64.3971C46.5275 57.427 52.3790 52.4294 59.2648 52.4294C67.7598 52.4294 74.6521 59.3214 74.6521 67.8164C74.6521 76.3113 67.7598 83.2037 59.2648 83.2037C55.9574 83.2037 52.8709 82.0949 50.3999 80.1855C49.431 79.4954 48.1363 79.5393 47.2752 80.3996L32.0447 95.6302C30.8197 96.8548 31.5636 99 33.2599 99C34.9026 99 36.5454 98.8781 38.142 98.6553C44.9556 97.6553 51.2356 94.8281 56.3762 90.642C58.6555 88.7861 61.0457 86.7567 63.7865 85.0392C63.9501 84.9312 64.114 84.8231 64.3322 84.7151C76.4899 79.4954 85.7462 68.6714 87.4429 55.4348C87.6739 53.7519 87.7891 52.0158 87.7891 50.2259C87.7891 48.9332 88.5024 47.7629 89.6275 47.2292L106.396 39.3163C108.364 38.4161 110.584 39.8481 110.584 41.9863V64.9142Z" fill="#FFD700"/>
                     <path d="M110.584 64.9142H99.142C99.142 41.8335 80.2231 23 57.142 23C36.3226 23 18.7929 38.8944 15.6294 59.0563C15.2463 61.2766 15.0547 63.5605 15.0547 65.8019C15.0547 67.693 17.0548 69.142 18.9496 69.142H41.0038C42.2774 69.142 43.3791 68.2511 43.6484 67.002C43.8341 66.1368 44.0274 65.2393 44.3292 64.3971C46.5275 57.427 52.3790 52.4294 59.2648 52.4294C67.7598 52.4294 74.6521 59.3214 74.6521 67.8164C74.6521 76.3113 67.7598 83.2037 59.2648 83.2037C55.9574 83.2037 52.8709 82.0949 50.3999 80.1855C49.431 79.4954 48.1363 79.5393 47.2752 80.3996L32.0447 95.6302C30.8197 96.8548 31.5636 99 33.2599 99C34.9026 99 36.5454 98.8781 38.142 98.6553C44.9556 97.6553 51.2356 94.8281 56.3762 90.642C58.6555 88.7861 61.0457 86.7567 63.7865 85.0392C63.9501 84.9312 64.114 84.8231 64.3322 84.7151C76.4899 79.4954 85.7462 68.6714 87.4429 55.4348C87.6739 53.7519 87.7891 52.0158 87.7891 50.2259C87.7891 48.9332 88.5024 47.7629 89.6275 47.2292L106.396 39.3163C108.364 38.4161 110.584 39.8481 110.584 41.9863V64.9142Z" fill="url(#paint0_linear_phantom)"/>
                     <defs>
                       <linearGradient id="paint0_linear_phantom" x1="62.8196" y1="23" x2="62.8196" y2="99" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#7ddfbd"/>
-                        <stop offset="1" stopColor="#02b36d"/>
+                        <stop stopColor="#FFE4B5"/>
+                        <stop offset="1" stopColor="#FFD700"/>
                       </linearGradient>
                     </defs>
                   </svg>
                   <span className="font-mono tracking-wider">CONNECT PHANTOM</span>
                 </button>
                 {publicKey && (
-                  <div className="mt-3 p-3 bg-[#091217] rounded-lg border border-[#02b36d30] text-sm font-mono text-[#e4fbf2] break-all shadow-inner animate-[fadeIn_0.3s_ease]">
-                    <div className="text-xs text-[#7ddfbd] mb-1 font-mono uppercase">Connected:</div>
+                  <div className="mt-3 p-3 bg-[#091217] rounded-lg border border-[#FFD70030] text-sm font-mono text-[#FFE4B5] break-all shadow-inner animate-[fadeIn_0.3s_ease]">
+                    <div className="text-xs text-[#FFE4B5] mb-1 font-mono uppercase">Connected:</div>
                     {publicKey}
                   </div>
                 )}
@@ -402,13 +402,13 @@ export const DepositModal: React.FC<DepositModalProps> = ({
               
               <div className="group mt-5">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                    <span className="text-[#02b36d]">&#62;</span> Select Recipient <span className="text-[#02b36d]">&#60;</span>
+                  <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                    <span className="text-[#FFD700]">&#62;</span> Select Recipient <span className="text-[#FFD700]">&#60;</span>
                   </label>
                   {selectedWallet && (
                     <div className="flex items-center gap-1 text-xs">
-                      <DollarSign size={10} className="text-[#7ddfbd]" />
-                      <span className="text-[#02b36d] font-medium font-mono">
+                      <DollarSign size={10} className="text-[#FFE4B5]" />
+                      <span className="text-[#FFD700] font-medium font-mono">
                         {formatSolBalance(getWalletBalance(selectedWallet))} SOL
                       </span>
                     </div>
@@ -418,18 +418,18 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                 {/* Search, Sort, and Filter Options */}
                 <div className="mb-2 flex space-x-2">
                   <div className="relative flex-grow">
-                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7ddfbd]" />
+                    <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FFE4B5]" />
                     <input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                      className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                       placeholder="SEARCH WALLETS..."
                     />
                   </div>
                   
                   <select 
-                    className="bg-[#091217] border border-[#02b36d30] rounded-lg px-2 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] modal-input-cyberpunk font-mono"
+                    className="bg-[#091217] border border-[#FFD70030] rounded-lg px-2 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] modal-input-cyberpunk font-mono"
                     value={sortOption}
                     onChange={(e) => setSortOption(e.target.value)}
                   >
@@ -438,62 +438,62 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                   </select>
                   
                   <button
-                    className="p-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#7ddfbd] hover:text-[#02b36d] hover:border-[#02b36d] transition-all modal-btn-cyberpunk"
+                    className="p-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] hover:text-[#FFD700] hover:border-[#FFD700] transition-all modal-btn-cyberpunk"
                     onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
                   >
                     {sortDirection === 'asc' ? '↑' : '↓'}
                   </button>
                 </div>
 
-                <div className="max-h-40 overflow-y-auto border border-[#02b36d20] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#02b36d40] scrollbar-thin">
+                <div className="max-h-40 overflow-y-auto border border-[#FFD70020] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#FFD70040] scrollbar-thin">
                   {filterWallets(wallets, searchTerm).length > 0 ? (
                     filterWallets(wallets, searchTerm).map((wallet) => (
                       <div 
                         key={wallet.id}
-                        className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#02b36d20] last:border-b-0
-                                  ${selectedWallet === wallet.address ? 'bg-[#02b36d10] border-[#02b36d30]' : ''}`}
+                        className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#FFD70020] last:border-b-0
+                                  ${selectedWallet === wallet.address ? 'bg-[#FFD70010] border-[#FFD70030]' : ''}`}
                         onClick={() => setSelectedWallet(wallet.address)}
                       >
                         <div className={`w-5 h-5 mr-3 rounded flex items-center justify-center transition-all duration-300
                                         ${selectedWallet === wallet.address
-                                          ? 'bg-[#02b36d] shadow-md shadow-[#02b36d40]' 
-                                          : 'border border-[#02b36d30] bg-[#091217]'}`}>
+                                          ? 'bg-[#FFD700] shadow-md shadow-[#FFD70040]' 
+                                          : 'border border-[#FFD70030] bg-[#091217]'}`}>
                           {selectedWallet === wallet.address && (
                             <CheckCircle size={14} className="text-[#050a0e] animate-[fadeIn_0.2s_ease]" />
                           )}
                         </div>
                         <div className="flex-1 flex flex-col">
-                          <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                          <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                           <div className="flex items-center mt-0.5">
-                            <DollarSign size={12} className="text-[#7ddfbd] mr-1" />
-                            <span className="text-xs text-[#7ddfbd] font-mono">{formatSolBalance(getWalletBalance(wallet.address) || 0)} SOL</span>
+                            <DollarSign size={12} className="text-[#FFE4B5] mr-1" />
+                            <span className="text-xs text-[#FFE4B5] font-mono">{formatSolBalance(getWalletBalance(wallet.address) || 0)} SOL</span>
                           </div>
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="p-3 text-sm text-[#7ddfbd] text-center font-mono">
+                    <div className="p-3 text-sm text-[#FFE4B5] text-center font-mono">
                       {searchTerm ? "NO WALLETS FOUND" : "NO WALLETS AVAILABLE"}
                     </div>
                   )}
                 </div>
                 {selectedWallet && (
                   <div className="mt-1.5 flex items-center gap-1.5 text-xs font-medium pl-1">
-                    <span className="text-[#7ddfbd] font-mono">CURRENT BALANCE:</span>
-                    <span className="text-[#02b36d] font-semibold font-mono">{formatSolBalance(getWalletBalance(selectedWallet) || 0)} SOL</span>
+                    <span className="text-[#FFE4B5] font-mono">CURRENT BALANCE:</span>
+                    <span className="text-[#FFD700] font-semibold font-mono">{formatSolBalance(getWalletBalance(selectedWallet) || 0)} SOL</span>
                   </div>
                 )}
               </div>
               
               <div className="group mt-5">
                 <div className="flex items-center gap-1 mb-2">
-                  <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                    <span className="text-[#02b36d]">&#62;</span> Amount (SOL) <span className="text-[#02b36d]">&#60;</span>
+                  <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                    <span className="text-[#FFD700]">&#62;</span> Amount (SOL) <span className="text-[#FFD700]">&#60;</span>
                   </label>
                   <div className="relative" onMouseEnter={() => setShowInfoTip(true)} onMouseLeave={() => setShowInfoTip(false)}>
-                    <Info size={14} className="text-[#7ddfbd] cursor-help" />
+                    <Info size={14} className="text-[#FFE4B5] cursor-help" />
                     {showInfoTip && (
-                      <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#02b36d30] rounded shadow-lg text-xs text-[#e4fbf2] w-48 z-10 font-mono">
+                      <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#FFD70030] rounded shadow-lg text-xs text-[#FFE4B5] w-48 z-10 font-mono">
                         Enter the amount of SOL to deposit
                       </div>
                     )}
@@ -509,15 +509,15 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                         setAmount(value);
                       }
                     }}
-                    className="w-full px-4 py-2.5 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#e4fbf2] shadow-inner focus:border-[#02b36d] focus:ring-1 focus:ring-[#02b36d50] focus:outline-none transition-all duration-200 modal-input-cyberpunk font-mono tracking-wider"
+                    className="w-full px-4 py-2.5 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] shadow-inner focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD70050] focus:outline-none transition-all duration-200 modal-input-cyberpunk font-mono tracking-wider"
                     placeholder="ENTER AMOUNT TO DEPOSIT"
                   />
-                  <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#02b36d30] transition-all duration-300"></div>
+                  <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#FFD70030] transition-all duration-300"></div>
                 </div>
                 {selectedWallet && amount && (
                   <div className="mt-1.5 flex items-center gap-1.5 text-xs font-medium pl-1">
-                    <span className="text-[#7ddfbd] font-mono">NEW BALANCE AFTER DEPOSIT:</span>
-                    <span className="text-[#02b36d] font-semibold font-mono">
+                    <span className="text-[#FFE4B5] font-mono">NEW BALANCE AFTER DEPOSIT:</span>
+                    <span className="text-[#FFD700] font-semibold font-mono">
                       {(parseFloat(formatSolBalance(getWalletBalance(selectedWallet) || 0)) + parseFloat(amount || '0')).toFixed(4)} SOL
                     </span>
                   </div>
@@ -527,7 +527,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
               <div className="flex justify-end gap-3 mt-6">
                 <button
                   onClick={onClose}
-                  className="px-5 py-2.5 text-[#e4fbf2] bg-[#091217] border border-[#02b36d30] hover:bg-[#0a1419] hover:border-[#02b36d] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
+                  className="px-5 py-2.5 text-[#FFE4B5] bg-[#091217] border border-[#FFD70030] hover:bg-[#0a1419] hover:border-[#FFD700] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
                 >
                   CANCEL
                 </button>
@@ -536,8 +536,8 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                   disabled={!publicKey || !selectedWallet || !amount}
                   className={`px-5 py-2.5 text-[#050a0e] rounded-lg shadow-lg flex items-center transition-all duration-300 font-mono tracking-wider 
                             ${!publicKey || !selectedWallet || !amount
-                              ? 'bg-[#02b36d50] cursor-not-allowed opacity-50' 
-                              : 'bg-[#02b36d] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                              ? 'bg-[#FFD70050] cursor-not-allowed opacity-50' 
+                              : 'bg-[#FFD700] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
                 >
                   <span>REVIEW</span>
                   <ChevronRight size={16} className="ml-1" />
@@ -549,37 +549,37 @@ export const DepositModal: React.FC<DepositModalProps> = ({
           {currentStep === 1 && (
             <div className="animate-[fadeIn_0.3s_ease]">
               {/* Review Summary */}
-              <div className="bg-[#091217] border border-[#02b36d30] rounded-lg p-4 mb-5">
-                <h3 className="text-base font-semibold text-[#e4fbf2] mb-3 font-mono tracking-wider">TRANSACTION SUMMARY</h3>
+              <div className="bg-[#091217] border border-[#FFD70030] rounded-lg p-4 mb-5">
+                <h3 className="text-base font-semibold text-[#FFE4B5] mb-3 font-mono tracking-wider">TRANSACTION SUMMARY</h3>
                 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#7ddfbd] font-mono">FROM:</span>
-                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#02b36d20]">
-                      <span className="text-sm font-mono text-[#e4fbf2] glitch-text">{formatAddress(publicKey)}</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">FROM:</span>
+                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#FFD70020]">
+                      <span className="text-sm font-mono text-[#FFE4B5] glitch-text">{formatAddress(publicKey)}</span>
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#7ddfbd] font-mono">TO WALLET:</span>
-                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#02b36d20]">
-                      <span className="text-sm font-mono text-[#e4fbf2] glitch-text">{formatAddress(selectedWallet)}</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">TO WALLET:</span>
+                    <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#FFD70020]">
+                      <span className="text-sm font-mono text-[#FFE4B5] glitch-text">{formatAddress(selectedWallet)}</span>
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#7ddfbd] font-mono">RECIPIENT BALANCE:</span>
-                    <span className="text-sm text-[#e4fbf2] font-mono">{formatSolBalance(getWalletBalance(selectedWallet) || 0)} SOL</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">RECIPIENT BALANCE:</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">{formatSolBalance(getWalletBalance(selectedWallet) || 0)} SOL</span>
                   </div>
                   
-                  <div className="pt-2 border-t border-[#02b36d20] flex items-center justify-between">
-                    <span className="text-sm font-medium text-[#7ddfbd] font-mono">AMOUNT TO DEPOSIT:</span>
-                    <span className="text-sm font-semibold text-[#02b36d] font-mono">{parseFloat(amount).toFixed(4)} SOL</span>
+                  <div className="pt-2 border-t border-[#FFD70020] flex items-center justify-between">
+                    <span className="text-sm font-medium text-[#FFE4B5] font-mono">AMOUNT TO DEPOSIT:</span>
+                    <span className="text-sm font-semibold text-[#FFD700] font-mono">{parseFloat(amount).toFixed(4)} SOL</span>
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#7ddfbd] font-mono">NEW BALANCE:</span>
-                    <span className="text-sm text-[#e4fbf2] font-mono">
+                    <span className="text-sm text-[#FFE4B5] font-mono">NEW BALANCE:</span>
+                    <span className="text-sm text-[#FFE4B5] font-mono">
                       {(getWalletBalance(selectedWallet) + parseFloat(amount)).toFixed(4)} SOL
                     </span>
                   </div>
@@ -587,7 +587,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
               </div>
               
               {/* Confirmation Checkbox */}
-              <div className="flex items-center px-3 py-3 bg-[#091217] rounded-lg border border-[#02b36d30] mb-5">
+              <div className="flex items-center px-3 py-3 bg-[#091217] rounded-lg border border-[#FFD70030] mb-5">
                 <div className="relative mx-1">
                   <input
                     type="checkbox"
@@ -596,10 +596,10 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                     onChange={(e) => setIsConfirmed(e.target.checked)}
                     className="peer sr-only"
                   />
-                  <div className="w-5 h-5 border border-[#02b36d40] rounded peer-checked:bg-[#02b36d] peer-checked:border-0 transition-all"></div>
+                  <div className="w-5 h-5 border border-[#FFD70040] rounded peer-checked:bg-[#FFD700] peer-checked:border-0 transition-all"></div>
                   <CheckCircle size={14} className={`absolute top-0.5 left-0.5 text-[#050a0e] transition-all ${isConfirmed ? 'opacity-100' : 'opacity-0'}`} />
                 </div>
-                <label htmlFor="confirmDeposit" className="text-[#e4fbf2] text-sm ml-2 cursor-pointer select-none font-mono">
+                <label htmlFor="confirmDeposit" className="text-[#FFE4B5] text-sm ml-2 cursor-pointer select-none font-mono">
                   I CONFIRM THIS DEPOSIT TRANSACTION
                 </label>
               </div>
@@ -608,7 +608,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
               <div className="flex justify-end gap-3 mt-6">
                 <button
                   onClick={() => setCurrentStep(0)}
-                  className="px-5 py-2.5 text-[#e4fbf2] bg-[#091217] border border-[#02b36d30] hover:bg-[#0a1419] hover:border-[#02b36d] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
+                  className="px-5 py-2.5 text-[#FFE4B5] bg-[#091217] border border-[#FFD70030] hover:bg-[#0a1419] hover:border-[#FFD700] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
                 >
                   BACK
                 </button>
@@ -617,8 +617,8 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                   disabled={!isConfirmed || isSubmitting}
                   className={`px-5 py-2.5 rounded-lg shadow-lg flex items-center transition-all duration-300 font-mono tracking-wider
                             ${!isConfirmed || isSubmitting
-                              ? 'bg-[#02b36d50] text-[#050a0e80] cursor-not-allowed opacity-50' 
-                              : 'bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                              ? 'bg-[#FFD70050] text-[#050a0e80] cursor-not-allowed opacity-50' 
+                              : 'bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
                 >
                   {isSubmitting ? (
                     <>
@@ -635,10 +635,10 @@ export const DepositModal: React.FC<DepositModalProps> = ({
         </div>
         
         {/* Cyberpunk decorative corner elements */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
       </div>
     </div>,
     document.body

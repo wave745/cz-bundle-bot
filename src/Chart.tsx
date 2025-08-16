@@ -462,10 +462,10 @@ export const ChartPage: React.FC<ChartPageProps> = ({
       
       <motion.div
         variants={itemVariants}
-        className="mt-6 flex items-center gap-2 px-4 py-3 rounded-lg bg-green-500/10 border border-green-500/20"
+        className="mt-6 flex items-center gap-2 px-4 py-3 rounded-lg bg-yellow-500/10 border border-yellow-500/20"
       >
-        <AlertCircle size={16} className="text-green-400" />
-        <span className="text-green-300 text-sm">No token selected</span>
+        <AlertCircle size={16} className="text-yellow-400" />
+        <span className="text-yellow-300 text-sm">No token selected</span>
       </motion.div>
     </motion.div>
   );

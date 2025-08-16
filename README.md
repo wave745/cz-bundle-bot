@@ -6,28 +6,28 @@
 
 ## 🚀 One-Click Deployment
 
-You can deploy **Raze.bot** instantly using either **Vercel** or **Netlify** with the buttons below:
+You can deploy **CAESAR BOT** instantly using either **Vercel** or **Netlify** with the buttons below:
 
 <div align="center">
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/furydotbot/raze.bot)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/furydotbot/raze.bot)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/your-username/solana-bundle)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/solana-bundle)
 
 </div>
 
-![Raze.bot image](https://i.imgur.com/fDrfNv3.png)
+![CAESAR BOT image](https://i.imgur.com/fDrfNv3.png)
 
 **Solana UI** is a multi-wallet trading platform designed for the Solana blockchain.  
 It provides users with a seamless interface to connect various Solana wallets and execute trades efficiently.
 
-> 🛠️ This project was developed by the team at [**Raze.bot**](https://raze.bot) using the open-source [**Fury SDKs**](https://github.com/furydotbot) to power its backend integrations and blockchain interactions.
+> 🛠️ This project was developed by the team at [**CAESAR BOT**](https://caesarbot.com) using the open-source [**Fury SDKs**](https://github.com/furydotbot) to power its backend integrations and blockchain interactions.
 
 ---
 
 ## 📚 Documentation
 
 Find the full documentation here:  
-👉 [https://docs.raze.bot/how-to-use](https://docs.raze.bot/how-to-use)
+👉 [https://docs.caesarbot.com/how-to-use](https://docs.caesarbot.com/how-to-use)
 
 ---
 
@@ -43,7 +43,7 @@ Find the full documentation here:
 ## 🚀 Demo
 
 Try the live version here:  
-👉 [https://sol.app.raze.bot/](https://sol.app.raze.bot)
+👉 [https://app.caesarbot.com/](https://app.caesarbot.com)
 
 ---
 

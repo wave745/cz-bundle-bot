@@ -358,7 +358,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
     }
     
     .glitch-text:hover {
-      text-shadow: 0 0 2px #02b36d, 0 0 4px #02b36d;
+      text-shadow: 0 0 2px #FFD700, 0 0 4px #FFD700;
       animation: glitch 2s infinite;
     }
     
@@ -408,7 +408,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm modal-cyberpunk-container" style={{backgroundColor: 'rgba(5, 10, 14, 0.85)'}}>
-      <div className="relative bg-[#050a0e] border border-[#02b36d40] rounded-lg shadow-lg w-full max-w-6xl overflow-hidden transform modal-cyberpunk-content modal-glow">
+      <div className="relative bg-[#050a0e] border border-[#FFD70040] rounded-lg shadow-lg w-full max-w-6xl overflow-hidden transform modal-cyberpunk-content modal-glow">
         {/* Ambient grid background */}
         <div className="absolute inset-0 z-0 opacity-10"
              style={{
@@ -419,18 +419,18 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
         </div>
 
         {/* Header */}
-        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#02b36d40]">
+        <div className="relative z-10 p-4 flex justify-between items-center border-b border-[#FFD70040]">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#02b36d20] mr-3">
-              <ArrowDown size={16} className="text-[#02b36d]" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#FFD70020] mr-3">
+              <ArrowDown size={16} className="text-[#FFD700]" />
             </div>
-            <h2 className="text-lg font-semibold text-[#e4fbf2] font-mono">
-              <span className="text-[#02b36d]">/</span> CONSOLIDATE SOL <span className="text-[#02b36d]">/</span>
+            <h2 className="text-lg font-semibold text-[#FFE4B5] font-mono">
+              <span className="text-[#FFD700]">/</span> CONSOLIDATE SOL <span className="text-[#FFD700]">/</span>
             </h2>
           </div>
           <button 
             onClick={onClose}
-            className="text-[#7ddfbd] hover:text-[#02b36d] transition-colors p-1 hover:bg-[#02b36d20] rounded"
+            className="text-[#FFE4B5] hover:text-[#FFD700] transition-colors p-1 hover:bg-[#FFD70020] rounded"
           >
             <X size={18} />
           </button>
@@ -439,7 +439,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
         {/* Progress Indicator */}
         <div className="relative w-full h-1 bg-[#091217] progress-bar-cyberpunk">
           <div 
-            className="h-full bg-[#02b36d] transition-all duration-300"
+            className="h-full bg-[#FFD700] transition-all duration-300"
             style={{ width: currentStep === 0 ? '50%' : '100%' }}
           ></div>
         </div>
@@ -454,13 +454,13 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                 <div className="w-full md:w-1/2">
                   <div className="group">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                        <span className="text-[#02b36d]">&#62;</span> Recipient Wallet <span className="text-[#02b36d]">&#60;</span>
+                      <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                        <span className="text-[#FFD700]">&#62;</span> Recipient Wallet <span className="text-[#FFD700]">&#60;</span>
                       </label>
                       {selectedRecipientWallet && (
                         <div className="flex items-center gap-1 text-xs">
-                          <DollarSign size={10} className="text-[#7ddfbd]" />
-                          <span className="text-[#02b36d] font-medium font-mono">
+                          <DollarSign size={10} className="text-[#FFE4B5]" />
+                          <span className="text-[#FFD700] font-medium font-mono">
                             {formatSolBalance(getWalletBalance(selectedRecipientWallet))} SOL
                           </span>
                         </div>
@@ -470,18 +470,18 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                     {/* Recipient Search and Filters */}
                     <div className="mb-2 flex space-x-2">
                       <div className="relative flex-grow">
-                        <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7ddfbd]" />
+                        <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FFE4B5]" />
                         <input
                           type="text"
                           value={recipientSearchTerm}
                           onChange={(e) => setRecipientSearchTerm(e.target.value)}
-                          className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                          className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                           placeholder="SEARCH RECIPIENT..."
                         />
                       </div>
                       
                       <select 
-                        className="bg-[#091217] border border-[#02b36d30] rounded-lg px-2 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] modal-input-cyberpunk font-mono"
+                        className="bg-[#091217] border border-[#FFD70030] rounded-lg px-2 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] modal-input-cyberpunk font-mono"
                         value={sortOption}
                         onChange={(e) => setSortOption(e.target.value)}
                       >
@@ -490,41 +490,41 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                       </select>
                       
                       <button
-                        className="p-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#7ddfbd] hover:text-[#02b36d] hover:border-[#02b36d] transition-all modal-btn-cyberpunk"
+                        className="p-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] hover:text-[#FFD700] hover:border-[#FFD700] transition-all modal-btn-cyberpunk"
                         onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}
                       >
                         {sortDirection === 'asc' ? '↑' : '↓'}
                       </button>
                     </div>
 
-                    <div className="h-52 overflow-y-auto border border-[#02b36d20] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#02b36d40] scrollbar-thin">
+                    <div className="h-52 overflow-y-auto border border-[#FFD70020] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#FFD70040] scrollbar-thin">
                       {filterWallets(getAvailableRecipientWalletsForConsolidate(), recipientSearchTerm).length > 0 ? (
                         filterWallets(getAvailableRecipientWalletsForConsolidate(), recipientSearchTerm).map((wallet) => (
                           <div 
                             key={wallet.id}
-                            className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#02b36d20] last:border-b-0
-                                      ${selectedRecipientWallet === wallet.address ? 'bg-[#02b36d10] border-[#02b36d30]' : ''}`}
+                            className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#FFD70020] last:border-b-0
+                                      ${selectedRecipientWallet === wallet.address ? 'bg-[#FFD70010] border-[#FFD70030]' : ''}`}
                             onClick={() => setSelectedRecipientWallet(wallet.address)}
                           >
                             <div className={`w-5 h-5 mr-3 rounded flex items-center justify-center transition-all duration-300
                                             ${selectedRecipientWallet === wallet.address
-                                              ? 'bg-[#02b36d] shadow-md shadow-[#02b36d40]' 
-                                              : 'border border-[#02b36d30] bg-[#091217]'}`}>
+                                              ? 'bg-[#FFD700] shadow-md shadow-[#FFD70040]' 
+                                              : 'border border-[#FFD70030] bg-[#091217]'}`}>
                               {selectedRecipientWallet === wallet.address && (
                                 <CheckCircle size={14} className="text-[#050a0e] animate-[fadeIn_0.2s_ease]" />
                               )}
                             </div>
                             <div className="flex-1 flex flex-col">
-                              <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                              <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                               <div className="flex items-center mt-0.5">
-                                <DollarSign size={12} className="text-[#7ddfbd] mr-1" />
-                                <span className="text-xs text-[#7ddfbd] font-mono">{formatSolBalance(getWalletBalance(wallet.address) || 0)} SOL</span>
+                                <DollarSign size={12} className="text-[#FFE4B5] mr-1" />
+                                <span className="text-xs text-[#FFE4B5] font-mono">{formatSolBalance(getWalletBalance(wallet.address) || 0)} SOL</span>
                               </div>
                             </div>
                           </div>
                         ))
                       ) : (
-                        <div className="p-3 text-sm text-[#7ddfbd] text-center font-mono">
+                        <div className="p-3 text-sm text-[#FFE4B5] text-center font-mono">
                           {recipientSearchTerm ? "NO WALLETS FOUND" : "NO WALLETS AVAILABLE"}
                         </div>
                       )}
@@ -536,12 +536,12 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                 <div className="w-full md:w-1/2">
                   <div className="group">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                        <span className="text-[#02b36d]">&#62;</span> Source Wallets <span className="text-[#02b36d]">&#60;</span>
+                      <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                        <span className="text-[#FFD700]">&#62;</span> Source Wallets <span className="text-[#FFD700]">&#60;</span>
                       </label>
                       <button 
                         onClick={handleSelectAllSources}
-                        className="text-xs px-2 py-0.5 bg-[#091217] hover:bg-[#0a1419] text-[#7ddfbd] hover:text-[#02b36d] rounded transition-all border border-[#02b36d20] hover:border-[#02b36d] font-mono"
+                        className="text-xs px-2 py-0.5 bg-[#091217] hover:bg-[#0a1419] text-[#FFE4B5] hover:text-[#FFD700] rounded transition-all border border-[#FFD70020] hover:border-[#FFD700] font-mono"
                       >
                         {selectedSourceWallets.length === getAvailableSourceWallets().length ? 'DESELECT ALL' : 'SELECT ALL'}
                       </button>
@@ -550,18 +550,18 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                     {/* Source Search and Filters */}
                     <div className="mb-2 flex space-x-2">
                       <div className="relative flex-grow">
-                        <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7ddfbd]" />
+                        <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#FFE4B5]" />
                         <input
                           type="text"
                           value={sourceSearchTerm}
                           onChange={(e) => setSourceSearchTerm(e.target.value)}
-                          className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#02b36d30] rounded-lg text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] transition-all modal-input-cyberpunk font-mono"
+                          className="w-full pl-9 pr-4 py-2 bg-[#091217] border border-[#FFD70030] rounded-lg text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] transition-all modal-input-cyberpunk font-mono"
                           placeholder="SEARCH SOURCES..."
                         />
                       </div>
                       
                       <select 
-                        className="bg-[#091217] border border-[#02b36d30] rounded-lg px-2 text-sm text-[#e4fbf2] focus:outline-none focus:border-[#02b36d] modal-input-cyberpunk font-mono"
+                        className="bg-[#091217] border border-[#FFD70030] rounded-lg px-2 text-sm text-[#FFE4B5] focus:outline-none focus:border-[#FFD700] modal-input-cyberpunk font-mono"
                         value={balanceFilter}
                         onChange={(e) => setBalanceFilter(e.target.value)}
                       >
@@ -571,7 +571,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                       </select>
                     </div>
 
-                    <div className="h-52 overflow-y-auto border border-[#02b36d20] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#02b36d40] scrollbar-thin">
+                    <div className="h-52 overflow-y-auto border border-[#FFD70020] rounded-lg shadow-inner bg-[#091217] transition-all duration-200 group-hover:border-[#FFD70040] scrollbar-thin">
                       {filterWallets(getAvailableSourceWallets(), sourceSearchTerm).length > 0 ? (
                         filterWallets(getAvailableSourceWallets(), sourceSearchTerm).map((wallet) => {
                           const balance = getWalletBalance(wallet.address) || 0;
@@ -580,24 +580,24 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                           return (
                             <div 
                               key={wallet.id}
-                              className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#02b36d20] last:border-b-0 data-flow
-                                        ${selectedSourceWallets.includes(wallet.address) ? 'bg-[#02b36d10] border-[#02b36d30]' : ''}`}
+                              className={`flex items-center p-2.5 hover:bg-[#0a1419] cursor-pointer transition-all duration-200 border-b border-[#FFD70020] last:border-b-0 data-flow
+                                        ${selectedSourceWallets.includes(wallet.address) ? 'bg-[#FFD70010] border-[#FFD70030]' : ''}`}
                               onClick={() => toggleSourceWalletSelection(wallet.address)}
                             >
                               <div className={`w-5 h-5 mr-3 rounded flex items-center justify-center transition-all duration-300
                                               ${selectedSourceWallets.includes(wallet.address) 
-                                                ? 'bg-[#02b36d] shadow-md shadow-[#02b36d40]' 
-                                                : 'border border-[#02b36d30] bg-[#091217]'}`}>
+                                                ? 'bg-[#FFD700] shadow-md shadow-[#FFD70040]' 
+                                                : 'border border-[#FFD70030] bg-[#091217]'}`}>
                                 {selectedSourceWallets.includes(wallet.address) && (
                                   <CheckCircle size={14} className="text-[#050a0e] animate-[fadeIn_0.2s_ease]" />
                                 )}
                               </div>
                               <div className="flex-1 flex justify-between items-center">
-                                <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                                <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                                 <div className="flex flex-col items-end">
-                                  <span className="text-xs text-[#7ddfbd] font-mono">{formatSolBalance(balance)} SOL</span>
+                                  <span className="text-xs text-[#FFE4B5] font-mono">{formatSolBalance(balance)} SOL</span>
                                   {selectedSourceWallets.includes(wallet.address) && amount && (
-                                    <span className="text-xs text-[#02b36d] font-mono">-{transferAmount.toFixed(4)} SOL</span>
+                                    <span className="text-xs text-[#FFD700] font-mono">-{transferAmount.toFixed(4)} SOL</span>
                                   )}
                                 </div>
                               </div>
@@ -605,18 +605,18 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                           );
                         })
                       ) : (
-                        <div className="p-3 text-sm text-[#7ddfbd] text-center font-mono">
+                        <div className="p-3 text-sm text-[#FFE4B5] text-center font-mono">
                           {sourceSearchTerm ? "NO WALLETS FOUND" : "NO WALLETS AVAILABLE"}
                         </div>
                       )}
                     </div>
                     <div className="mt-1.5 flex items-center justify-between text-xs">
-                      <span className="text-[#7ddfbd] font-mono">
-                        SELECTED: <span className="text-[#02b36d] font-medium">{selectedSourceWallets.length}</span> WALLETS
+                      <span className="text-[#FFE4B5] font-mono">
+                        SELECTED: <span className="text-[#FFD700] font-medium">{selectedSourceWallets.length}</span> WALLETS
                       </span>
                       {selectedSourceWallets.length > 0 && amount && (
-                        <span className="text-[#7ddfbd] font-mono">
-                          TOTAL TO CONSOLIDATE: <span className="text-[#02b36d] font-medium">
+                        <span className="text-[#FFE4B5] font-mono">
+                          TOTAL TO CONSOLIDATE: <span className="text-[#FFD700] font-medium">
                             {getTotalConsolidationAmount().toFixed(4)} SOL
                           </span>
                         </span>
@@ -627,19 +627,19 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
               </div>
               
               {/* Row 2: Live Preview, Percentage Input, and Buttons */}
-              <div className="mt-4 border-t border-[#02b36d20] pt-4">
+              <div className="mt-4 border-t border-[#FFD70020] pt-4">
                 <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
                   {/* Percentage Input */}
                   <div className="w-full md:w-1/3">
                     <div className="group">
                       <div className="flex items-center gap-1 mb-2">
-                        <label className="text-sm font-medium text-[#7ddfbd] group-hover:text-[#02b36d] transition-colors duration-200 font-mono uppercase tracking-wider">
-                          <span className="text-[#02b36d]">&#62;</span> Percentage to Consolidate (%) <span className="text-[#02b36d]">&#60;</span>
+                        <label className="text-sm font-medium text-[#FFE4B5] group-hover:text-[#FFD700] transition-colors duration-200 font-mono uppercase tracking-wider">
+                          <span className="text-[#FFD700]">&#62;</span> Percentage to Consolidate (%) <span className="text-[#FFD700]">&#60;</span>
                         </label>
                         <div className="relative" onMouseEnter={() => setShowInfoTip(true)} onMouseLeave={() => setShowInfoTip(false)}>
-                          <Info size={14} className="text-[#7ddfbd] cursor-help" />
+                          <Info size={14} className="text-[#FFE4B5] cursor-help" />
                           {showInfoTip && (
-                            <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#02b36d30] rounded shadow-lg text-xs text-[#e4fbf2] w-48 z-10 font-mono">
+                            <div className="absolute left-0 bottom-full mb-2 p-2 bg-[#091217] border border-[#FFD70030] rounded shadow-lg text-xs text-[#FFE4B5] w-48 z-10 font-mono">
                               Percentage of SOL to consolidate from each source wallet
                             </div>
                           )}
@@ -655,10 +655,10 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                               setAmount(value);
                             }
                           }}
-                          className="w-full px-4 py-2.5 bg-[#091217] border border-[#02b36d30] rounded-lg text-[#e4fbf2] shadow-inner focus:border-[#02b36d] focus:ring-1 focus:ring-[#02b36d50] focus:outline-none transition-all duration-200 modal-input-cyberpunk font-mono tracking-wider"
+                          className="w-full px-4 py-2.5 bg-[#091217] border border-[#FFD70030] rounded-lg text-[#FFE4B5] shadow-inner focus:border-[#FFD700] focus:ring-1 focus:ring-[#FFD70050] focus:outline-none transition-all duration-200 modal-input-cyberpunk font-mono tracking-wider"
                           placeholder="ENTER PERCENTAGE (E.G. 90)"
                         />
-                        <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#02b36d30] transition-all duration-300"></div>
+                        <div className="absolute inset-0 rounded-lg pointer-events-none border border-transparent group-hover:border-[#FFD70030] transition-all duration-300"></div>
                       </div>
                     </div>
                   </div>
@@ -666,14 +666,14 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                   {/* Live Preview / Summary Box */}
                   <div className="w-full md:w-2/3">
                     {selectedRecipientWallet && selectedSourceWallets.length > 0 ? (
-                      <div className="bg-[#091217] rounded-lg p-3 border border-[#02b36d30] h-full shadow-inner">
+                      <div className="bg-[#091217] rounded-lg p-3 border border-[#FFD70030] h-full shadow-inner">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-sm font-semibold text-[#e4fbf2] font-mono">
-                            <span className="text-[#02b36d]">//</span> LIVE PREVIEW
+                          <h3 className="text-sm font-semibold text-[#FFE4B5] font-mono">
+                            <span className="text-[#FFD700]">//</span> LIVE PREVIEW
                           </h3>
                           {amount && (
-                            <div className="px-2 py-1 bg-[#02b36d20] rounded-md border border-[#02b36d30]">
-                              <span className="text-xs font-medium text-[#02b36d] font-mono">
+                            <div className="px-2 py-1 bg-[#FFD70020] rounded-md border border-[#FFD70030]">
+                              <span className="text-xs font-medium text-[#FFD700] font-mono">
                                 {amount ? `${amount}% CONSOLIDATION` : 'SET PERCENTAGE'}
                               </span>
                             </div>
@@ -683,18 +683,18 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           <div className="flex flex-col space-y-1">
                             <div className="flex justify-between items-center">
-                              <span className="text-xs text-[#7ddfbd] font-mono">SOURCE WALLETS:</span>
-                              <span className="text-xs text-[#e4fbf2] font-mono">{selectedSourceWallets.length} SELECTED</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">SOURCE WALLETS:</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">{selectedSourceWallets.length} SELECTED</span>
                             </div>
                             
                             <div className="flex justify-between items-center">
-                              <span className="text-xs text-[#7ddfbd] font-mono">RECIPIENT:</span>
-                              <span className="text-xs text-[#e4fbf2] font-mono">{formatAddress(selectedRecipientWallet)}</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">RECIPIENT:</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">{formatAddress(selectedRecipientWallet)}</span>
                             </div>
                             
                             <div className="flex justify-between items-center">
-                              <span className="text-xs text-[#7ddfbd] font-mono">RECIPIENT BALANCE:</span>
-                              <span className="text-xs text-[#e4fbf2] font-mono">{formatSolBalance(getWalletBalance(selectedRecipientWallet))} SOL</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">RECIPIENT BALANCE:</span>
+                              <span className="text-xs text-[#FFE4B5] font-mono">{formatSolBalance(getWalletBalance(selectedRecipientWallet))} SOL</span>
                             </div>
                           </div>
                           
@@ -702,22 +702,22 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                             {amount && (
                               <>
                                 <div className="flex justify-between items-center">
-                                  <span className="text-xs text-[#7ddfbd] font-mono">AMOUNT TO MOVE:</span>
-                                  <span className="text-xs font-semibold text-[#02b36d] font-mono">
+                                  <span className="text-xs text-[#FFE4B5] font-mono">AMOUNT TO MOVE:</span>
+                                  <span className="text-xs font-semibold text-[#FFD700] font-mono">
                                     {getTotalConsolidationAmount().toFixed(4)} SOL
                                   </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                  <span className="text-xs text-[#7ddfbd] font-mono">NEW BALANCE:</span>
-                                  <span className="text-xs text-[#e4fbf2] font-mono">
+                                  <span className="text-xs text-[#FFE4B5] font-mono">NEW BALANCE:</span>
+                                  <span className="text-xs text-[#FFE4B5] font-mono">
                                     {(getWalletBalance(selectedRecipientWallet) + getTotalConsolidationAmount()).toFixed(4)} SOL
                                   </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                  <span className="text-xs text-[#7ddfbd] font-mono">CHANGE:</span>
-                                  <span className="text-xs font-semibold text-[#02b36d] font-mono">
+                                  <span className="text-xs text-[#FFE4B5] font-mono">CHANGE:</span>
+                                  <span className="text-xs font-semibold text-[#FFD700] font-mono">
                                     +{getTotalConsolidationAmount().toFixed(4)} SOL
                                   </span>
                                 </div>
@@ -727,7 +727,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                         </div>
                       </div>
                     ) : (
-                      <div className="bg-[#091217] rounded-lg p-3 border border-[#02b36d20] h-full flex items-center justify-center text-[#7ddfbd] text-sm font-mono">
+                      <div className="bg-[#091217] rounded-lg p-3 border border-[#FFD70020] h-full flex items-center justify-center text-[#FFE4B5] text-sm font-mono">
                         SELECT RECIPIENT AND SOURCE WALLETS TO SEE LIVE PREVIEW
                       </div>
                     )}
@@ -738,7 +738,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                 <div className="flex justify-end gap-3 mt-4">
                   <button
                     onClick={onClose}
-                    className="px-5 py-2.5 text-[#e4fbf2] bg-[#091217] border border-[#02b36d30] hover:bg-[#0a1419] hover:border-[#02b36d] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
+                    className="px-5 py-2.5 text-[#FFE4B5] bg-[#091217] border border-[#FFD70030] hover:bg-[#0a1419] hover:border-[#FFD700] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
                   >
                     CANCEL
                   </button>
@@ -747,8 +747,8 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                     disabled={!selectedRecipientWallet || !amount || selectedSourceWallets.length === 0}
                     className={`px-5 py-2.5 rounded-lg shadow-lg flex items-center transition-all duration-300 font-mono tracking-wider
                               ${!selectedRecipientWallet || !amount || selectedSourceWallets.length === 0
-                                ? 'bg-[#02b36d50] cursor-not-allowed opacity-50 text-[#050a0e80]' 
-                                : 'bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                                ? 'bg-[#FFD70050] cursor-not-allowed opacity-50 text-[#050a0e80]' 
+                                : 'bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
                   >
                     <span>REVIEW</span>
                     <ChevronRight size={16} className="ml-1" />
@@ -762,42 +762,42 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
             <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 animate-[fadeIn_0.3s_ease]">
               {/* Left Side - Summary */}
               <div className="w-full md:w-1/2 space-y-4">
-                <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30] shadow-inner">
-                  <h3 className="text-base font-semibold text-[#e4fbf2] mb-3 font-mono tracking-wider">
-                    <span className="text-[#02b36d]">//</span> CONSOLIDATION SUMMARY
+                <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030] shadow-inner">
+                  <h3 className="text-base font-semibold text-[#FFE4B5] mb-3 font-mono tracking-wider">
+                    <span className="text-[#FFD700]">//</span> CONSOLIDATION SUMMARY
                   </h3>
                   
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#7ddfbd] font-mono">TO WALLET:</span>
-                      <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#02b36d20]">
-                        <span className="text-sm font-mono text-[#e4fbf2] glitch-text">{formatAddress(selectedRecipientWallet)}</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">TO WALLET:</span>
+                      <div className="flex items-center bg-[#0a1419] px-2 py-1 rounded border border-[#FFD70020]">
+                        <span className="text-sm font-mono text-[#FFE4B5] glitch-text">{formatAddress(selectedRecipientWallet)}</span>
                       </div>
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#7ddfbd] font-mono">CURRENT BALANCE:</span>
-                      <span className="text-sm text-[#e4fbf2] font-mono">{formatSolBalance(getWalletBalance(selectedRecipientWallet) || 0)} SOL</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">CURRENT BALANCE:</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">{formatSolBalance(getWalletBalance(selectedRecipientWallet) || 0)} SOL</span>
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#7ddfbd] font-mono">SOURCE WALLETS:</span>
-                      <span className="text-sm text-[#e4fbf2] font-mono">{selectedSourceWallets.length} WALLETS</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">SOURCE WALLETS:</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">{selectedSourceWallets.length} WALLETS</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#7ddfbd] font-mono">PERCENTAGE PER SOURCE:</span>
-                      <span className="text-sm text-[#02b36d] font-medium font-mono">{amount}%</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">PERCENTAGE PER SOURCE:</span>
+                      <span className="text-sm text-[#FFD700] font-medium font-mono">{amount}%</span>
                     </div>
                     
-                    <div className="pt-2 border-t border-[#02b36d20] flex items-center justify-between">
-                      <span className="text-sm font-medium text-[#7ddfbd] font-mono">TOTAL TO CONSOLIDATE:</span>
-                      <span className="text-sm font-semibold text-[#02b36d] font-mono">{getTotalConsolidationAmount().toFixed(4)} SOL</span>
+                    <div className="pt-2 border-t border-[#FFD70020] flex items-center justify-between">
+                      <span className="text-sm font-medium text-[#FFE4B5] font-mono">TOTAL TO CONSOLIDATE:</span>
+                      <span className="text-sm font-semibold text-[#FFD700] font-mono">{getTotalConsolidationAmount().toFixed(4)} SOL</span>
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-[#7ddfbd] font-mono">NEW BALANCE (ESTIMATED):</span>
-                      <span className="text-sm text-[#e4fbf2] font-mono">
+                      <span className="text-sm text-[#FFE4B5] font-mono">NEW BALANCE (ESTIMATED):</span>
+                      <span className="text-sm text-[#FFE4B5] font-mono">
                         {(getWalletBalance(selectedRecipientWallet) + getTotalConsolidationAmount()).toFixed(4)} SOL
                       </span>
                     </div>
@@ -805,7 +805,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                 </div>
                 
                 {/* Confirmation Checkbox */}
-                <div className="flex items-center px-3 py-3 bg-[#091217] rounded-lg border border-[#02b36d30]">
+                <div className="flex items-center px-3 py-3 bg-[#091217] rounded-lg border border-[#FFD70030]">
                   <div className="relative mx-1">
                     <input
                       type="checkbox"
@@ -814,10 +814,10 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                       onChange={(e) => setIsConfirmed(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="w-5 h-5 border border-[#02b36d40] rounded peer-checked:bg-[#02b36d] peer-checked:border-0 transition-all"></div>
+                    <div className="w-5 h-5 border border-[#FFD70040] rounded peer-checked:bg-[#FFD700] peer-checked:border-0 transition-all"></div>
                     <CheckCircle size={14} className={`absolute top-0.5 left-0.5 text-[#050a0e] transition-all ${isConfirmed ? 'opacity-100' : 'opacity-0'}`} />
                   </div>
-                  <label htmlFor="confirmConsolidate" className="text-[#e4fbf2] text-sm ml-2 cursor-pointer select-none font-mono">
+                  <label htmlFor="confirmConsolidate" className="text-[#FFE4B5] text-sm ml-2 cursor-pointer select-none font-mono">
                     I CONFIRM THIS CONSOLIDATION OPERATION
                   </label>
                 </div>
@@ -825,9 +825,9 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
               
               {/* Right Side - Source Wallets List */}
               <div className="w-full md:w-1/2">
-                <div className="bg-[#091217] rounded-lg p-4 border border-[#02b36d30] h-full shadow-inner">
-                  <h3 className="text-base font-semibold text-[#e4fbf2] mb-3 font-mono tracking-wider">
-                    <span className="text-[#02b36d]">//</span> SELECTED SOURCE WALLETS
+                <div className="bg-[#091217] rounded-lg p-4 border border-[#FFD70030] h-full shadow-inner">
+                  <h3 className="text-base font-semibold text-[#FFE4B5] mb-3 font-mono tracking-wider">
+                    <span className="text-[#FFD700]">//</span> SELECTED SOURCE WALLETS
                   </h3>
                   
                   <div className="max-h-64 overflow-y-auto pr-1 scrollbar-thin">
@@ -838,20 +838,20 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                         const transferAmount = balance * parseFloat(amount) / 100;
                         
                         return wallet ? (
-                          <div key={wallet.id} className="flex items-center justify-between py-1.5 border-b border-[#02b36d20] last:border-b-0">
+                          <div key={wallet.id} className="flex items-center justify-between py-1.5 border-b border-[#FFD70020] last:border-b-0">
                             <div className="flex items-center">
-                              <span className="text-[#7ddfbd] text-xs mr-2 w-6 font-mono">{index + 1}.</span>
-                              <span className="font-mono text-sm text-[#e4fbf2] glitch-text">{formatAddress(wallet.address)}</span>
+                              <span className="text-[#FFE4B5] text-xs mr-2 w-6 font-mono">{index + 1}.</span>
+                              <span className="font-mono text-sm text-[#FFE4B5] glitch-text">{formatAddress(wallet.address)}</span>
                             </div>
                             <div className="flex items-center">
-                              <span className="text-xs text-[#7ddfbd] mr-2 font-mono">CURRENT: {formatSolBalance(balance)} SOL</span>
-                              <span className="text-xs text-[#02b36d] font-mono">-{transferAmount.toFixed(4)} SOL</span>
+                              <span className="text-xs text-[#FFE4B5] mr-2 font-mono">CURRENT: {formatSolBalance(balance)} SOL</span>
+                              <span className="text-xs text-[#FFD700] font-mono">-{transferAmount.toFixed(4)} SOL</span>
                             </div>
                           </div>
                         ) : null;
                       })
                     ) : (
-                      <div className="p-3 text-sm text-[#7ddfbd] text-center font-mono">
+                      <div className="p-3 text-sm text-[#FFE4B5] text-center font-mono">
                         NO SOURCE WALLETS SELECTED
                       </div>
                     )}
@@ -866,7 +866,7 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
             <div className="flex justify-end gap-3 mt-6">
               <button
                 onClick={() => setCurrentStep(0)}
-                className="px-5 py-2.5 text-[#e4fbf2] bg-[#091217] border border-[#02b36d30] hover:bg-[#0a1419] hover:border-[#02b36d] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
+                className="px-5 py-2.5 text-[#FFE4B5] bg-[#091217] border border-[#FFD70030] hover:bg-[#0a1419] hover:border-[#FFD700] rounded-lg transition-all duration-200 shadow-md font-mono tracking-wider modal-btn-cyberpunk"
               >
                 BACK
               </button>
@@ -875,8 +875,8 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
                 disabled={!isConfirmed || isSubmitting}
                 className={`px-5 py-2.5 rounded-lg shadow-lg flex items-center transition-all duration-300 font-mono tracking-wider
                           ${!isConfirmed || isSubmitting
-                            ? 'bg-[#02b36d50] cursor-not-allowed opacity-50 text-[#050a0e80]' 
-                            : 'bg-[#02b36d] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
+                            ? 'bg-[#FFD70050] cursor-not-allowed opacity-50 text-[#050a0e80]' 
+                            : 'bg-[#FFD700] text-[#050a0e] hover:bg-[#01a35f] transform hover:-translate-y-0.5 modal-btn-cyberpunk'}`}
               >
                 {isSubmitting ? (
                   <>
@@ -892,10 +892,10 @@ export const ConsolidateModal: React.FC<ConsolidateModalProps> = ({
         </div>
         
         {/* Cyberpunk decorative corner elements */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#02b36d] opacity-70"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#02b36d] opacity-70"></div>
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#FFD700] opacity-70"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#FFD700] opacity-70"></div>
       </div>
     </div>,
     document.body
