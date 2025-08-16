@@ -1,107 +1,75 @@
-<p align="center">
+# 🏆 CAESAR BOT - Solana Trading Platform
 
-  <img src="https://img.shields.io/badge/Built%20on-Solana-3a0ca3?style=for-the-badge&logo=solana" alt="Built on Solana" />
-  <img src="https://img.shields.io/badge/Open%20Source-Yes-00b386?style=for-the-badge&logo=github" alt="Open Source" />
-</p>
-
-## 🚀 One-Click Deployment
-
-You can deploy **CAESAR BOT** instantly using either **Vercel** or **Netlify** with the buttons below:
-
-<div align="center">
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/your-username/solana-bundle)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/solana-bundle)
-
-</div>
-
-![CAESAR BOT image](https://i.imgur.com/fDrfNv3.png)
-
-**Solana UI** is a multi-wallet trading platform designed for the Solana blockchain.  
-It provides users with a seamless interface to connect various Solana wallets and execute trades efficiently.
-
-> 🛠️ This project was developed by the team at [**CAESAR BOT**](https://caesarbot.com) using the open-source [**Fury SDKs**](https://github.com/furydotbot) to power its backend integrations and blockchain interactions.
-
----
-
-## 📚 Documentation
-
-Find the full documentation here:  
-👉 [https://docs.caesarbot.com/how-to-use](https://docs.caesarbot.com/how-to-use)
-
----
+A powerful, gold-themed Solana trading platform with advanced bundling capabilities and professional UI.
 
 ## ✨ Features
 
-- 🔑 **Multi-Wallet Support** – Connect and manage multiple Solana wallets effortlessly.
-- 📈 **Trading Interface** – Intuitive UI for executing trades on the Solana network.
-- 📱 **Responsive Design** – Optimized for both desktop and mobile devices.
-- ⚡ **Fast Performance** – Built with modern web technologies for a smooth user experience.
+- **🎯 Advanced Trading**: Multi-wallet trading with Jupiter DEX integration
+- **📦 Bundle Transactions**: Jito MEV bundle support for optimal execution
+- **🏆 Gold Cyberpunk UI**: Luxurious gold theme with enhanced visual effects
+- **📊 Real-time Analytics**: Live P&L tracking and market data
+- **🔐 Secure Wallet Management**: Encrypted wallet storage and management
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile
+- **⚡ High Performance**: Optimized for speed and efficiency
 
----
-
-## 🚀 Demo
-
-Try the live version here:  
-👉 [https://app.caesarbot.com/](https://app.caesarbot.com)
-
----
-
-## 🧰 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v14 or later)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-
-### Installation
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/furydotbot/solana-ui.git
-cd solana-ui
+# Clone the repository
+git clone https://github.com/wave745/cz-bundle-bot.git
+cd cz-bundle-bot
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-Visit: `http://localhost:5173`
+## 🛠️ Tech Stack
 
----
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS with custom gold theme
+- **Blockchain**: Solana Web3.js, Jupiter API
+- **Bundling**: Jito MEV bundle integration
+- **UI Components**: Custom enhanced effects and animations
 
-## 🗂 Project Structure
+## 📁 Project Structure
 
 ```
-solana-ui/
-├── public/             # Static assets
-├── src/                # Source code
-│   ├── components/     # React components
-│   ├── pages/          # Next.js pages
-│   └── styles/         # Tailwind CSS styles
-├── tailwind.config.js  # Tailwind CSS configuration
-├── postcss.config.js   # PostCSS configuration
-├── package.json        # Project metadata and scripts
-└── README.md           # Project documentation
+src/
+├── Logo.tsx              # CAESAR BOT logo component
+├── EnhancedEffects.tsx   # Gold-themed visual effects
+├── App.tsx              # Main application component
+├── PnlCard.tsx          # Profit & Loss display
+├── Wallets.tsx          # Wallet management
+├── TradingForm.tsx      # Trading interface
+└── utils/               # Utility functions
 ```
 
----
+## 🎨 Customization
 
-## 🧪 Technologies Used
-
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/)
-- [Fury TypeScript SDK](https://github.com/furydotbot/typescript-sdk)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!  
-Fork the repo and open a pull request for new features, improvements, or bug fixes.
-
----
+The platform features a complete gold cyberpunk theme with:
+- Custom CSS animations and effects
+- Enhanced visual components
+- Professional branding
+- Responsive design elements
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+**Built with ❤️ for the Solana ecosystem**
